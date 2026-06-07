@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POCO X7 Pro 5G | Grupo Xiaomi Brasil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red-primary: #FF6B35;
+            --red-dark: #E8491C;
+            --red-light: #FF8C5A;
+            --red-pale: #FFF0E8;
+            --green-accent: #2DAA5F;
+            --green-dark: #1E7A3F;
+            --blue-accent: #3B6EA0;
+            --blue-dark: #2A4D7A;
+            --yellow-accent: #FFD93D;
+            --yellow-light: #FFE88A;
+            --bg-primary: #FAFAFA;
+            --bg-secondary: #F5F5F5;
+            --text-primary: #1A1A2E;
+            --text-secondary: #4A4A6A;
+            --text-muted: #7A7A9A;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.15);
+            --shadow-xl: 0 16px 40px rgba(0,0,0,0.2);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-head: 'Inter', sans-serif;
+            --font-body: 'Noto Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-primary) 50%, var(--green-accent) 100%);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-top {
+            background: rgba(0,0,0,0.2);
+            padding: 6px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--yellow-accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .header-top span {
+            display: inline-block;
+            animation: scrollText 20s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .header-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--yellow-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: var(--red-dark);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-text span:first-child { font-size: 1.3rem; font-weight: 800; line-height: 1.2; font-family: var(--font-head); }
+        .logo-text span:last-child { font-size: 0.75rem; opacity: 0.9; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; }
+
+        .search-bar { flex: 1; max-width: 500px; position: relative; }
+        .search-bar input {
+            width: 100%;
+            padding: 12px 48px 12px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.95);
+            box-shadow: var(--shadow-sm);
+            outline: none;
+            transition: var(--transition);
+        }
+        .search-bar input:focus { background: var(--white); box-shadow: var(--shadow-md); }
+        .search-bar input::placeholder { color: var(--text-muted); }
+
+        .search-btn {
+            position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+            background: var(--red-primary); border: none; color: white;
+            width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition);
+        }
+        .search-btn:hover { background: var(--red-dark); transform: translateY(-50%) scale(1.05); }
+
+        .header-actions { display: flex; align-items: center; gap: 16px; }
+        .header-btn {
+            background: none; border: none; color: white; cursor: pointer;
+            font-size: 1.0rem; display: flex; align-items: center; gap: 6px;
+            padding: 8px 14px; border-radius: var(--radius-sm); transition: var(--transition);
+        }
+        .header-btn:hover { background: rgb(50, 122, 51); }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb-bar {
+            background: var(--white);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding: 12px 24px;
+        }
+        .breadcrumb-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+        .breadcrumb-inner a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
+        .breadcrumb-inner a:hover { color: var(--red-primary); }
+        .breadcrumb-sep { opacity: 0.4; }
+        .breadcrumb-current { color: var(--text-primary); font-weight: 600; }
+
+        /* ===== PRODUCT HERO ===== */
+        .product-hero {
+            background: linear-gradient(135deg, #3f72b5 0%, #2554a6 50%,    #19519c 100%);
+            padding: 48px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 320px; height: 320px;
+            background: radial-gradient(circle, rgba(255,107,53,0.18) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .product-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40px; left: -40px;
+            width: 240px; height: 240px;
+            background: radial-gradient(circle, rgba(45,170,95,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .product-hero-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-hero-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-main-img {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .product-main-img:hover { transform: scale(1.05); }
+
+        .product-hero-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            animation: floatPhone 4s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35));
+        }
+
+        @keyframes floatPhone {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .hero-badge-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hb-brand { background: var(--red-primary); color: #fff; }
+        .hb-off { background: var(--yellow-accent); color: #1a1a2e; }
+        .hb-new { background: var(--green-accent); color: #fff; }
+        .hb-5g { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+
+        .product-hero-title {
+            font-family: var(--font-head);
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .product-hero-subtitle {
+            font-size: 1rem;
+            color: rgb(255, 255, 255);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .hero-price-block {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+        }
+
+        .hero-price-old {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+
+        .hero-price-new {
+            font-family: var(--font-head);
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--yellow-accent);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .hero-price-pix {
+            font-size: 14px;
+            color: #7dffb3;
+            font-weight: 600;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-buy {
+            flex: 1;
+            min-width: 180px;
+            background: var(--red-primary);
+            color: #fff;
+            border: none;
+            padding: 16px 28px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(255,107,53,0.4);
+        }
+
+        .btn-hero-buy:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(255,107,53,0.55);
+        }
+
+        .btn-hero-wish {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-md);
+            border: 1.5px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .btn-hero-wish:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.5); }
+
+        /* ===== QUICK SPECS ICONS ===== */
+        .quick-specs-section {
+            background: var(--white);
+            padding: 40px 24px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .quick-specs-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .quick-specs-title {
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .quick-specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 16px;
+        }
+
+        .qs-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 22px 16px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .qs-card:hover {
+            border-color: var(--red-primary);
+            background: var(--red-pale);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .qs-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: block;
+            line-height: 1;
+        }
+
+        .qs-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .qs-value {
+            font-family: var(--font-head);
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .qs-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* ===== CUPOM STRIP ===== */
+        .cupom-strip {
+            background: linear-gradient(90deg, var(--red-pale), #fff5f0);
+            border-top: 2px dashed var(--red-primary);
+            border-bottom: 2px dashed var(--red-primary);
+            padding: 18px 24px;
+        }
+
+        .cupom-strip-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cupom-strip-label { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
+
+        .cupom-strip-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--white);
+            border: 2px dashed var(--red-primary);
+            border-radius: var(--radius-md);
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cupom-strip-box:hover { background: var(--red-pale); transform: scale(1.02); }
+
+        .cupom-strip-code {
+            font-family: monospace;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--red-dark);
+            letter-spacing: 2px;
+        }
+
+        .cupom-strip-btn {
+            background: var(--red-primary);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cupom-strip-btn:hover { background: var(--red-dark); }
+
+        .cupom-strip-saving {
+            font-size: 14px;
+            color: var(--green-accent);
+            font-weight: 700;
+        }
+
+        /* ===== SUMMARY SECTION ===== */
+        .summary-section {
+            padding: 56px 24px;
+            background: var(--bg-primary);
+        }
+
+        .summary-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--red-pale);
+            color: var(--red-primary);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: var(--font-head);
+            font-size: clamp(22px, 2.5vw, 30px);
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-title span { color: var(--red-primary); }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .summary-highlights {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .summary-highlights li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Regra de contraste UX para quando a lista estiver no bloco escuro */
+        .summary-media .summary-highlights li {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hl-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--green-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .summary-media {
+            background: linear-gradient(135deg, #0a7b46 0%, #2d5e2a 100%);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 30px;
+            min-height: 340px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-media::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .summary-rating {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .rating-stars { font-size: 20px; letter-spacing: 2px; }
+
+        .rating-score {
+            font-family: var(--font-head);
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--yellow-accent);
+        }
+
+        .rating-count { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+        /* ===== SPECS TABLE ===== */
+        .specs-section {
+            background: var(--white);
+            padding: 56px 24px;
+        }
+
+        .specs-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .specs-section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .specs-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .specs-tab {
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 1.5px solid #e0e0e0;
+            background: var(--white);
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .specs-tab.active,
+        .specs-tab:hover {
+            border-color: var(--red-primary);
+            color: var(--red-primary);
+            background: var(--red-pale);
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .specs-table thead tr {
+            background: linear-gradient(135deg, #0a7b46 0%, #2d5e2a 100%);
+        }
+
+        .specs-table thead th {
+            padding: 16px 20px;
+            text-align: left;
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .specs-table tbody tr {
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .specs-table tbody tr:last-child { border-bottom: none; }
+
+        .specs-table tbody tr:hover { background: var(--red-pale); }
+
+        .specs-table tbody tr:nth-child(even) { background: var(--bg-secondary); }
+        .specs-table tbody tr:nth-child(even):hover { background: var(--red-pale); }
+
+        .specs-table td {
+            padding: 14px 20px;
+            font-size: 14px;
+        }
+
+        .specs-table td:first-child {
+            color: var(--text-muted);
+            font-weight: 600;
+            width: 38%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spec-row-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--red-pale);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .specs-table td:last-child {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .spec-highlight {
+            display: inline-block;
+            background: var(--green-accent);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 50px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-primary) 60%, #ff9a5a 100%);
+            padding: 64px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 360px; height: 360px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -60px;
+            width: 280px; height: 280px;
+            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-eyebrow {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .cta-title {
+            font-family: var(--font-head);
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .cta-title span { color: var(--yellow-accent); }
+
+        .cta-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 36px;
+        }
+
+        .cta-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .cta-price-old {
+            font-size: 18px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: line-through;
+        }
+
+        .cta-price-new {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--yellow-accent);
+            line-height: 1;
+        }
+
+        .cta-price-off {
+            background: var(--yellow-accent);
+            color: #1a1a2e;
+            font-size: 16px;
+            font-weight: 800;
+            padding: 8px 16px;
+            border-radius: 50px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .btn-cta-primary {
+            background: var(--white);
+            color: var(--red-dark);
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.8);
+            transform: translateY(-2px);
+        }
+
+        .cta-trust-row {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .trust-icon { font-size: 16px; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #245bba, #16317e);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 24px 36px;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.6);
+            margin-top: 16px;
+            max-width: 280px;
+        }
+
+        .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+
+        .social-btn {
+            width: 38px; height: 38px;
+            border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.08);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            border: none;
+        }
+
+        .social-btn:hover { background: var(--red-primary); color: #fff; transform: translateY(-2px); }
+
+        .footer-col h4 {
+            font-family: var(--font-head);
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: var(--red-primary);
+            margin-top: 8px;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: var(--transition); }
+        .footer-col ul a:hover { color: var(--yellow-accent); padding-left: 4px; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p { font-size: 13px; }
+
+        .footer-links { display: flex; gap: 20px; list-style: none; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { color: var(--yellow-accent); }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0,0,0,0.08);
+            z-index: 900;
+            padding: 8px 0 12px;
+        }
+
+        .mobile-nav-inner { display: flex; justify-content: space-around; }
+
+        .mobile-nav-btn {
+            display: flex; flex-direction: column; align-items: center; gap: 4px;
+            background: none; border: none; cursor: pointer;
+            padding: 8px 16px; border-radius: var(--radius-sm);
+            color: var(--text-muted); text-decoration: none; transition: var(--transition);
+        }
+
+        .mobile-nav-btn.active { color: var(--red-primary); }
+        .mobile-nav-icon { font-size: 22px; line-height: 1; }
+        .mobile-nav-label { font-size: 10px; font-weight: 600; }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 24px; left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: var(--green-accent);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 3000;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex; align-items: center; gap: 10px;
+            box-shadow: var(--shadow-lg);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .toast.show { transform: translateX(-50%) translateY(0); }
+
+        /* ===== STICKY BUY BAR ===== */
+        .sticky-buy-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: var(--white);
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding: 12px 24px;
+            z-index: 850;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .sticky-buy-bar.visible { transform: translateY(0); }
+
+        .sticky-buy-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .sticky-product-info { display: flex; align-items: center; gap: 12px; }
+        .sticky-emoji { font-size: 28px; }
+        .sticky-name { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--text-primary); }
+        .sticky-price { font-size: 22px; font-weight: 900; color: var(--red-primary); font-family: var(--font-head); }
+
+        .sticky-buy-btn {
+            background: var(--red-primary);
+            color: #fff;
+            border: none;
+            padding: 13px 32px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .sticky-buy-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+        /* ===== FADE IN ANIMATION ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-up { opacity: 0; animation: fadeUp 0.55s ease forwards; }
+        .animate-up:nth-child(1) { animation-delay: 0.05s; }
+        .animate-up:nth-child(2) { animation-delay: 0.10s; }
+        .animate-up:nth-child(3) { animation-delay: 0.15s; }
+        .animate-up:nth-child(4) { animation-delay: 0.20s; }
+        .animate-up:nth-child(5) { animation-delay: 0.25s; }
+        .animate-up:nth-child(6) { animation-delay: 0.30s; }
+        .animate-up:nth-child(7) { animation-delay: 0.35s; }
+        .animate-up:nth-child(8) { animation-delay: 0.40s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .summary-inner { grid-template-columns: 1fr; }
+            .product-hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .product-hero-image { order: -1; }
+            .hero-badge-row { justify-content: center; }
+            .hero-cta-row { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .header-main { flex-wrap: wrap; gap: 12px; }
+            .search-bar { order: 3; max-width: 100%; width: 100%; }
+            .header-actions { margin-left: auto; }
+            .mobile-nav { display: block; }
+            body { padding-bottom: 80px; }
+            .quick-specs-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-inner { grid-template-columns: 1fr; }
+            .specs-table td:first-child { flex-direction: column; align-items: flex-start; gap: 4px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .header-main { padding: 10px 16px; }
+            .logo-text span:first-child { font-size: 1.1rem; }
+            .quick-specs-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn-cta-primary, .btn-cta-secondary { width: 100%; justify-content: center; }
+            /* Redução do container da imagem no mobile para não ocupar a tela toda */
+            .product-main-img { max-width: 600px; } 
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--red-primary); border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-top">
+            <span>🔥 COMPRE NAS LOJAS PARCEIRAS PAGANDO MENOS COM CUPONS EXCLUSIVOS — ATÉ 40% DE DESCONTO 🔥</span>
+        </div>
+        <div class="header-main">
+            <a href="#" class="logo">
+                <div class="logo-icon">X</div>
+                <div class="logo-text">
+                    <span>Grupo Xiaomi Brasil</span>
+                    <span>Promoções &amp; Cupons</span>
+                </div>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos, marcas, cupons...">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="header-actions">
+                <button class="header-btn">AQUI VOCÊ ECONOMIZA DE VERDADE  🛒</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="#">🏠 Início</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="#">Celulares</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="#">POCO</a>
+            <span class="breadcrumb-sep">›</span>
+            <span class="breadcrumb-current">POCO X7 Pro 5G</span>
+        </div>
+    </div>
+
+    <section class="product-hero" id="topo">
+        <div class="product-hero-inner">
+            <div class="product-hero-image">
+                <div class="product-main-img" title="POCO X7 Pro 5G">
+                    <img src="xiaomi17tpro.png" alt="Apresentação do smartphone POCO X7 Pro 5G" class="product-hero-img">
+                </div>
+            </div>
+            <div class="product-hero-info">
+                <div class="hero-badge-row">
+                    <span class="hero-badge hb-brand">⚡ POCO</span>
+                    <span class="hero-badge hb-off">🔥 −35%</span>
+                    <span class="hero-badge hb-new">🆕 Lançamento 2025</span>
+                    <span class="hero-badge hb-5g">5G</span>
+                </div>
+                <h1 class="product-hero-title">POCO X7 Pro 5G<br>12/256GB</h1>
+                <p class="product-hero-subtitle">
+                    Performance extrema com Dimensity 8400-Ultra, bateria de 6000mAh e carregamento de 120W. O custo-benefício definitivo para quem não quer abrir mão de nada.
+                </p>
+
+                <div class="hero-price-block">
+                    <div class="hero-price-old">De: R$ 2.299,00</div>
+                    <div class="hero-price-new">R$ 1.499<span style="font-size:1.4rem">,00</span></div>
+                    <div class="hero-price-pix">✓ R$ 1.424,05 no Pix (5% off adicional)</div>
+                </div>
+
+                <div class="hero-cta-row">
+                    <a href="#comprar" class="btn-hero-buy" onclick="showToast('🛒','Redirecionando para a loja parceira...')">
+                        🛒 Copie o cupom abaixo e compre agora na loja oficial
+                    </a>
+                    <button class="btn-hero-wish" onclick="toggleWish(this)" title="Adicionar aos favoritos">🤍</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="cupom-strip">
+        <div class="cupom-strip-inner">
+            <span class="cupom-strip-label">🎟 Cupom exclusivo – economize mais:</span>
+            <div class="cupom-strip-box" onclick="copyCupom('POCOX7BR')">
+                <span style="font-size:18px">🎟</span>
+                <span class="cupom-strip-code">POCOX7BR</span>
+                <button class="cupom-strip-btn" id="cupom-btn-main">Copiar</button>
+            </div>
+            <span class="cupom-strip-saving">✅ Você economiza R$ 800,00!</span>
+        </div>
+    </div>
+
+    <section class="summary-section">
+        <div class="summary-inner">
+            <div>
+                <div class="section-tag">⚡ Resumo do aparelho</div>
+                <h2 class="section-title">O <span>custo-benefício</span> que você estava esperando</h2>
+                <p class="summary-text">
+                    O POCO X7 Pro 5G chega em 2025 como uma das escolhas mais inteligentes do mercado. Com o chipset Dimensity 8400-Ultra fabricado em processo de 4nm, o aparelho entrega desempenho de topo de linha em tarefas do cotidiano, jogos pesados e multitarefa intensiva — sem comprometer a autonomia.
+                </p>
+                <p class="summary-text">
+                    A tela AMOLED de 6,67 polegadas com taxa de atualização de 120Hz e brilho de até 3.000 nits garante imagens vibrantes mesmo em ambientes externos. A câmera principal de 50MP com abertura f/1.69 e OIS entrega fotos nítidas em qualquer condição de luz.
+                </p>
+                <p class="summary-text">
+                    O destaque vai para a bateria de 6.000mAh combinada ao carregamento rápido de 120W — que leva o aparelho de 0 a 100% em menos de 40 minutos. Com certificação IP68, o X7 Pro resiste a imersão em água de até 1,5 metro por 30 minutos.
+                </p>
+            </div>
+            <div class="summary-media">
+                <ul class="summary-highlights">
+                    <li>
+                        <div class="hl-icon">✓</div>
+                        <span><strong>Performance de flagship:</strong> Dimensity 8400-Ultra supera chipsets rivais com custo 30% menor</span>
+                    </li>
+                    <li>
+                        <div class="hl-icon">✓</div>
+                        <span><strong>Bateria que dura o dia todo:</strong> 6.000mAh com uso real de até 2 dias em modo conservador</span>
+                    </li>
+                    <li>
+                        <div class="hl-icon">✓</div>
+                        <span><strong>Carregamento ultra-rápido:</strong> 120W HyperCharge — totalmente carregado em ~38 minutos</span>
+                    </li>
+                    <li>
+                        <div class="hl-icon">✓</div>
+                        <span><strong>Durabilidade garantida:</strong> IP68 + Gorilla Glass 7 — proteção real para o dia a dia</span>
+                    </li>
+                    <li>
+                        <div class="hl-icon">✓</div>
+                        <span><strong>Frete grátis + cupom exclusivo:</strong> melhor preço garantido com cupom <strong>POCOX7BR</strong></span>
+                    </li>
+                </ul>
+                <div class="summary-rating">
+                    <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="rating-score">4,8</div>
+                    <div class="rating-count">Baseado em 2.847 avaliações</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="quick-specs-section">
+        <div class="quick-specs-inner">
+            <p class="quick-specs-title">✨ Especificações em destaque</p>
+            <div class="quick-specs-grid">
+                <div class="qs-card animate-up">
+                    <span class="qs-icon">🧠</span>
+                    <div class="qs-label">Processador</div>
+                    <div class="qs-value">Dimensity 8400-Ultra</div>
+                    <div class="qs-sub">4nm · Octa-core</div>
+                </div>
+                <div class="qs-card animate-up">
+                    <span class="qs-icon">💾</span>
+                    <div class="qs-label">Memória</div>
+                    <div class="qs-value">12GB RAM</div>
+                    <div class="qs-sub">256GB UFS 3.1</div>
+                </div>
+                <div class="qs-card animate-up">
+                    <span class="qs-icon">📺</span>
+                    <div class="qs-label">Tela</div>
+                    <div class="qs-value">6,67" AMOLED</div>
+                    <div class="qs-sub">120Hz · 1.5K</div>
+                </div>
+                <div class="qs-card animate-up">
+                    <span class="qs-icon">📷</span>
+                    <div class="qs-label">Câmera</div>
+                    <div class="qs-value">50MP principal</div>
+                    <div class="qs-sub">f/1.69 · OIS</div>
+                </div>
+                <div class="qs-card animate-up">
+                    <span class="qs-icon">🔋</span>
+                    <div class="qs-label">Bateria</div>
+                    <div class="qs-value">6.000mAh</div>
+                    <div class="qs-sub">120W HyperCharge</div>
+                </div>
+                <div class="qs-card animate-up">
+                    <span class="qs-icon">📶</span>
+                    <div class="qs-label">Conectividade</div>
+                    <div class="qs-value">5G + Wi-Fi 6E</div>
+                    <div class="qs-sub">BT 5.4 · NFC</div>
+                </div>
+                <div class="qs-card animate-up">
+                    <span class="qs-icon">📱</span>
+                    <div class="qs-label">Sistema</div>
+                    <div class="qs-value">HyperOS 2</div>
+                    <div class="qs-sub">Android 15</div>
+                </div>
+                <div class="qs-card animate-up">
+                    <span class="qs-icon">🛡️</span>
+                    <div class="qs-label">Proteção</div>
+                    <div class="qs-value">IP68</div>
+                    <div class="qs-sub">Gorilla Glass 7</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="specs-section" id="specs">
+        <div class="specs-inner">
+            <div class="specs-section-header">
+                <div>
+                    <div class="section-tag">📋 Ficha técnica completa</div>
+                    <h2 class="section-title" style="margin-top:10px;">Especificações <span>detalhadas</span></h2>
+                </div>
+                <div class="specs-tabs">
+                    <button class="specs-tab active" onclick="activateTab(this)">Geral</button>
+                    <button class="specs-tab" onclick="activateTab(this)">Câmera</button>
+                    <button class="specs-tab" onclick="activateTab(this)">Conectividade</button>
+                    <button class="specs-tab" onclick="activateTab(this)">Bateria</button>
+                </div>
+            </div>
+
+            <table class="specs-table">
+                <thead>
+                    <tr>
+                        <th>Especificação</th>
+                        <th>Detalhe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="spec-row-icon">🧠</div> Processador</td>
+                        <td>MediaTek Dimensity 8400-Ultra · Octa-core 3,25GHz · 4nm TSMC</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">💾</div> RAM / Armazenamento</td>
+                        <td>12GB LPDDR5X / 256GB UFS 3.1 <span class="spec-highlight">Sem slot microSD</span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🖥️</div> GPU</td>
+                        <td>Mali-G615 MC6 — desempenho gráfico superior</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">📺</div> Tela</td>
+                        <td>6,67" AMOLED · 1220 × 2712px (1.5K) · 120Hz · 3.000 nits · Dolby Vision</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">📷</div> Câmera traseira</td>
+                        <td>50MP f/1.69 OIS (principal) + 8MP f/2.2 ultra-wide + 2MP macro</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🤳</div> Câmera frontal</td>
+                        <td>20MP f/2.24 — vídeo até 4K@30fps</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🔋</div> Bateria</td>
+                        <td>6.000mAh Si-C <span class="spec-highlight">+120W HyperCharge</span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">📶</div> Redes</td>
+                        <td>5G SA/NSA · 4G LTE · 3G WCDMA · 2G GSM</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">📡</div> Wi-Fi / Bluetooth</td>
+                        <td>Wi-Fi 6E (802.11ax) · Bluetooth 5.4 · NFC</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🗺️</div> GPS</td>
+                        <td>GPS / A-GPS / GLONASS / BeiDou / Galileo / NavIC</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🔊</div> Áudio</td>
+                        <td>Dual speakers · Dolby Atmos · Hi-Res Audio — sem P2</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">📱</div> Sistema operacional</td>
+                        <td>HyperOS 2 baseado em Android 15</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🛡️</div> Proteção</td>
+                        <td>IP68 — resistente a pó e imersão em 1,5m por 30 min</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🪟</div> Vidro frontal</td>
+                        <td>Corning Gorilla Glass 7 — resistência superior a quedas</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🔌</div> Porta</td>
+                        <td>USB Type-C 2.0 — carregamento e transferência</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">📐</div> Dimensões / Peso</td>
+                        <td>160,3 × 74,5 × 8,25mm · 220g</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🎨</div> Cores disponíveis</td>
+                        <td>Preto Obsidiana · Branco Ártico · Amarelo Neon</td>
+                    </tr>
+                    <tr>
+                        <td><div class="spec-row-icon">🔐</div> Biometria</td>
+                        <td>Leitor de impressão digital lateral · Reconhecimento facial</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" style="width:32px;height:32px;font-size:1rem;">X</div>
+                    <div class="logo-text" style="color:#fff;">
+                        <span style="font-size:1rem;">Grupo Xiaomi Brasil</span>
+                        <span style="color:rgba(255,255,255,.6);font-size:.75rem;font-weight:400;letter-spacing:1px;text-transform:uppercase;">Promoções &amp; Cupons</span>
+                    </div>
+                </div>
+                <p>O maior portal de promoções, cupons e ofertas de produtos Xiaomi e marcas chinesas do Brasil. Economize mais a cada compra.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-btn" aria-label="Telegram">✈️</a>
+                    <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+                    <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+                    <a href="#" class="social-btn" aria-label="TikTok">🎵</a>
+                    <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="#">Celulares</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Smartwatch</a></li>
+                    <li><a href="#">Notebook</a></li>
+                    <li><a href="#">Fone de Ouvido</a></li>
+                    <li><a href="#">Smart Home</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Marcas</h4>
+                <ul>
+                    <li><a href="#">Xiaomi</a></li>
+                    <li><a href="#">Redmi</a></li>
+                    <li><a href="#">POCO</a></li>
+                    <li><a href="#">OnePlus</a></li>
+                    <li><a href="#">Realme</a></li>
+                    <li><a href="#">OPPO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informações</h4>
+                <ul>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Anuncie aqui</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Grupo Xiaomi Brasil – Promoções e Cupons. Todos os direitos reservados.<br>
+            <span style="font-size:12px;opacity:0.5;">Este site contém links de afiliados. Ao comprar, você apoia nosso trabalho sem pagar a mais por isso.</span></p>
+            <ul class="footer-links">
+                <li><a href="#">Privacidade</a></li>
+                <li><a href="#">Termos</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <nav class="mobile-nav">
+        <div class="mobile-nav-inner">
+            <a href="#" class="mobile-nav-btn">
+                <span class="mobile-nav-icon">🏠</span>
+                <span class="mobile-nav-label">Início</span>
+            </a>
+            <a href="#specs" class="mobile-nav-btn">
+                <span class="mobile-nav-icon">📋</span>
+                <span class="mobile-nav-label">Specs</span>
+            </a>
+            <a href="#comprar" class="mobile-nav-btn active">
+                <span class="mobile-nav-icon">🛒</span>
+                <span class="mobile-nav-label">Comprar</span>
+            </a>
+            <a href="#" class="mobile-nav-btn" onclick="copyCupom('POCOX7BR')">
+                <span class="mobile-nav-icon">🎟</span>
+                <span class="mobile-nav-label">Cupom</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="toast" id="toast">
+        <span id="toast-icon">✅</span>
+        <span id="toast-msg">Ação realizada!</span>
+    </div>
+
+    <script>
+        // Toast
+        function showToast(icon, msg) {
+            const t = document.getElementById('toast');
+            document.getElementById('toast-icon').textContent = icon;
+            document.getElementById('toast-msg').textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2800);
+        }
+
+        // Copy cupom
+        function copyCupom(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                showToast('🎟', `Cupom ${code} copiado! Cole no checkout.`);
+                const btn = document.getElementById('cupom-btn-main');
+                if (btn) { btn.textContent = '✓ Copiado!'; setTimeout(() => btn.textContent = 'Copiar', 2200); }
+            }).catch(() => {
+                showToast('📋', `Cupom: ${code} – copie manualmente`);
+            });
+            return false;
+        }
+
+        // Wishlist
+        function toggleWish(btn) {
+            const liked = btn.textContent === '❤️';
+            btn.textContent = liked ? '🤍' : '❤️';
+            showToast(liked ? '💔' : '❤️', liked ? 'Removido dos favoritos' : 'Adicionado aos favoritos!');
+        }
+
+        // Specs tabs
+        function activateTab(el) {
+            document.querySelectorAll('.specs-tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            showToast('📋', 'Mostrando: ' + el.textContent);
+        }
+
+        // Handle buy CTA
+        function handleBuy() {
+            copyCupom('POCOX7BR');
+            setTimeout(() => showToast('🛒', 'Abrindo loja parceira com o melhor preço...'), 700);
+            return false;
+        }
+
+        // Sticky bar on scroll
+        const stickyBar = document.createElement('div');
+        stickyBar.className = 'sticky-buy-bar';
+        stickyBar.innerHTML = `
+            <div class="sticky-buy-inner">
+                <div class="sticky-product-info">
+                    <span class="sticky-emoji">⚡</span>
+                    <div>
+                        <div class="sticky-name">POCO X7 Pro 5G 12/256GB</div>
+                        <div style="font-size:12px;color:var(--text-muted);">Frete grátis · Cupom POCOX7BR</div>
+                    </div>
+                </div>
+                <div class="sticky-price">R$ 1.499</div>
+                <button class="sticky-buy-btn" onclick="handleBuy()">🛒 Copiar cupom e ir para a loja oficial</button>
+            </div>`;
+        document.body.appendChild(stickyBar);
+
+        // Only show on desktop (non-mobile)
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const heroBottom = document.querySelector('.product-hero').getBoundingClientRect().bottom;
+            const isMobile = window.innerWidth <= 768;
+
+            if (!isMobile) {
+                stickyBar.style.display = 'block';
+                if (heroBottom < 0) {
+                    stickyBar.classList.add('visible');
+                } else {
+                    stickyBar.classList.remove('visible');
+                }
+            } else {
+                stickyBar.style.display = 'none';
+            }
+            lastScroll = scrollY;
+        });
+    </script>
+</body>
+</html>
