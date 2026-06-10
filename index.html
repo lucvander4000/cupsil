@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POCO X7 Pro 5G | Grupo Xiaomi Brasil</title>
+    <meta name="description" content="Cupons Brasil - Encontre as melhores promoções e cupons de produtos Xiaomi, Redmi, POCO, Realme, Tecno e mais. Celulares, tablets, smartwatches e muito mais com descontos exclusivos.">
+    <meta name="keywords" content="Xiaomi Brasil, cupons Xiaomi, promoções Xiaomi, celular chinês, smartphone barato, tablet Xiaomi, fone de ouvido Xiaomi, Mi TV Stick, aspirador de pó Xiaomi">
+    <meta name="author" content="Cupons Brasil">
+    <meta property="og:title" content="Cupons Brasil - Promoções e Cupons Exclusivos">
+    <meta property="og:description" content="As melhores ofertas em produtos Xiaomi e marcas chinesas com cupons de desconto exclusivos.">
+    <title>Cupons Brasil | Promoções e Cupons Exclusivos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ===== VARIÁVEIS DO SITE 1 APLICADAS EM TODO O PROJETO ===== */
         :root {
             --red-primary: #FF6B35;
             --red-dark: #E8491C;
@@ -33,13 +39,24 @@
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 24px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
             --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Fontes Globais */
             --font-head: 'Inter', sans-serif;
             --font-body: 'Noto Sans', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: var(--font-body);
@@ -47,10 +64,10 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-bottom: 80px;
+            padding-bottom: 0;
         }
 
-        /* ===== HEADER ===== */
+        /* ===== HEADER (SITE 1) ===== */
         .header {
             background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-primary) 50%, var(--green-accent) 100%);
             padding: 0;
@@ -68,18 +85,6 @@
             color: var(--yellow-accent);
             font-weight: 600;
             letter-spacing: 0.5px;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .header-top span {
-            display: inline-block;
-            animation: scrollText 20s linear infinite;
-        }
-
-        @keyframes scrollText {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
         }
 
         .header-main {
@@ -111,14 +116,34 @@
             font-weight: 900;
             color: var(--red-dark);
             font-size: 1.4rem;
-            flex-shrink: 0;
         }
 
-        .logo-text { display: flex; flex-direction: column; }
-        .logo-text span:first-child { font-size: 1.3rem; font-weight: 800; line-height: 1.2; font-family: var(--font-head); }
-        .logo-text span:last-child { font-size: 0.75rem; opacity: 0.9; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
 
-        .search-bar { flex: 1; max-width: 500px; position: relative; }
+        .logo-text span:first-child {
+            font-size: 1.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            font-family: var(--font-head);
+        }
+
+        .logo-text span:last-child {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
         .search-bar input {
             width: 100%;
             padding: 12px 48px 12px 20px;
@@ -128,764 +153,643 @@
             background: rgba(255,255,255,0.95);
             box-shadow: var(--shadow-sm);
             outline: none;
-            transition: var(--transition);
+            transition: all var(--transition-normal);
         }
-        .search-bar input:focus { background: var(--white); box-shadow: var(--shadow-md); }
-        .search-bar input::placeholder { color: var(--text-muted); }
+
+        .search-bar input:focus {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            transform: scale(1.01);
+        }
+
+        .search-bar input::placeholder {
+            color: var(--text-muted);
+        }
 
         .search-btn {
-            position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
-            background: var(--red-primary); border: none; color: white;
-            width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            transition: var(--transition);
-        }
-        .search-btn:hover { background: var(--red-dark); transform: translateY(-50%) scale(1.05); }
-
-        .header-actions { display: flex; align-items: center; gap: 16px; }
-        .header-btn {
-            background: none; border: none; color: white; cursor: pointer;
-            font-size: 1.0rem; display: flex; align-items: center; gap: 6px;
-            padding: 8px 14px; border-radius: var(--radius-sm); transition: var(--transition);
-        }
-        .header-btn:hover { background: rgb(50, 122, 51); }
-
-        /* ===== BREADCRUMB ===== */
-        .breadcrumb-bar {
-            background: var(--white);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            padding: 12px 24px;
-        }
-        .breadcrumb-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-        }
-        .breadcrumb-inner a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
-        .breadcrumb-inner a:hover { color: var(--red-primary); }
-        .breadcrumb-sep { opacity: 0.4; }
-        .breadcrumb-current { color: var(--text-primary); font-weight: 600; }
-
-        /* ===== PRODUCT HERO ===== */
-        .product-hero {
-            background: linear-gradient(135deg, #3f72b5 0%, #2554a6 50%,    #19519c 100%);
-            padding: 48px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-hero::before {
-            content: '';
             position: absolute;
-            top: -60px; right: -60px;
-            width: 320px; height: 320px;
-            background: radial-gradient(circle, rgba(255,107,53,0.18) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .product-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -40px; left: -40px;
-            width: 240px; height: 240px;
-            background: radial-gradient(circle, rgba(45,170,95,0.12) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .product-hero-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 56px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .product-hero-image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .product-main-img {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .product-main-img:hover { transform: scale(1.05); }
-
-        .product-hero-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            animation: floatPhone 4s ease-in-out infinite;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35));
-        }
-
-        @keyframes floatPhone {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
-        }
-
-        .hero-badge-row {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 5px 14px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .hb-brand { background: var(--red-primary); color: #fff; }
-        .hb-off { background: var(--yellow-accent); color: #1a1a2e; }
-        .hb-new { background: var(--green-accent); color: #fff; }
-        .hb-5g { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-
-        .product-hero-title {
-            font-family: var(--font-head);
-            font-size: clamp(1.6rem, 3vw, 2.4rem);
-            font-weight: 900;
-            color: var(--white);
-            line-height: 1.15;
-            margin-bottom: 12px;
-        }
-
-        .product-hero-subtitle {
-            font-size: 1rem;
-            color: rgb(255, 255, 255);
-            margin-bottom: 28px;
-            line-height: 1.6;
-        }
-
-        .hero-price-block {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: var(--radius-lg);
-            padding: 20px 24px;
-            backdrop-filter: blur(10px);
-            margin-bottom: 20px;
-        }
-
-        .hero-price-old {
-            font-size: 14px;
-            color: rgba(255,255,255,0.5);
-            text-decoration: line-through;
-            margin-bottom: 4px;
-        }
-
-        .hero-price-new {
-            font-family: var(--font-head);
-            font-size: 2.4rem;
-            font-weight: 900;
-            color: var(--yellow-accent);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .hero-price-pix {
-            font-size: 14px;
-            color: #7dffb3;
-            font-weight: 600;
-        }
-
-        .hero-cta-row {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn-hero-buy {
-            flex: 1;
-            min-width: 180px;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
             background: var(--red-primary);
-            color: #fff;
             border: none;
-            padding: 16px 28px;
-            border-radius: var(--radius-md);
-            font-family: var(--font-body);
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(255,107,53,0.4);
-        }
-
-        .btn-hero-buy:hover {
-            background: var(--red-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 28px rgba(255,107,53,0.55);
-        }
-
-        .btn-hero-wish {
-            width: 52px;
-            height: 52px;
-            border-radius: var(--radius-md);
-            border: 1.5px solid rgba(255,255,255,0.3);
-            background: rgba(255,255,255,0.1);
             color: white;
-            font-size: 20px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
-            flex-shrink: 0;
+            transition: all var(--transition-fast);
         }
 
-        .btn-hero-wish:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.5); }
-
-        /* ===== QUICK SPECS ICONS ===== */
-        .quick-specs-section {
-            background: var(--white);
-            padding: 40px 24px;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
+        .search-btn:hover {
+            background: var(--red-dark);
+            transform: translateY(-50%) scale(1.05);
         }
 
-        .quick-specs-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .quick-specs-title {
-            font-family: var(--font-head);
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 28px;
-            text-align: center;
-        }
-
-        .quick-specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        .header-actions {
+            display: flex;
+            align-items: center;
             gap: 16px;
         }
 
-        .qs-card {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            padding: 22px 16px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: var(--transition);
-            cursor: default;
-        }
-
-        .qs-card:hover {
-            border-color: var(--red-primary);
-            background: var(--red-pale);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .qs-icon {
-            font-size: 32px;
-            margin-bottom: 10px;
-            display: block;
-            line-height: 1;
-        }
-
-        .qs-label {
-            font-size: 11px;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-        }
-
-        .qs-value {
-            font-family: var(--font-head);
-            font-size: 14px;
-            font-weight: 800;
-            color: var(--text-primary);
-            line-height: 1.2;
-        }
-
-        .qs-sub {
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        /* ===== CUPOM STRIP ===== */
-        .cupom-strip {
-            background: linear-gradient(90deg, var(--red-pale), #fff5f0);
-            border-top: 2px dashed var(--red-primary);
-            border-bottom: 2px dashed var(--red-primary);
-            padding: 18px 24px;
-        }
-
-        .cupom-strip-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .cupom-strip-label { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
-
-        .cupom-strip-box {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: var(--white);
-            border: 2px dashed var(--red-primary);
-            border-radius: var(--radius-md);
-            padding: 12px 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .cupom-strip-box:hover { background: var(--red-pale); transform: scale(1.02); }
-
-        .cupom-strip-code {
-            font-family: monospace;
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--red-dark);
-            letter-spacing: 2px;
-        }
-
-        .cupom-strip-btn {
-            background: var(--red-primary);
-            color: #fff;
+        .header-btn {
+            background: none;
             border: none;
-            padding: 8px 16px;
-            border-radius: var(--radius-sm);
-            font-size: 13px;
-            font-weight: 700;
+            color: white;
             cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .cupom-strip-btn:hover { background: var(--red-dark); }
-
-        .cupom-strip-saving {
-            font-size: 14px;
-            color: var(--green-accent);
-            font-weight: 700;
-        }
-
-        /* ===== SUMMARY SECTION ===== */
-        .summary-section {
-            padding: 56px 24px;
-            background: var(--bg-primary);
-        }
-
-        .summary-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: start;
-        }
-
-        .section-tag {
-            display: inline-flex;
+            font-size: 0.9rem;
+            display: flex;
             align-items: center;
             gap: 6px;
-            background: var(--red-pale);
-            color: var(--red-primary);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 5px 14px;
-            border-radius: 50px;
-            margin-bottom: 16px;
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
         }
 
-        .section-title {
-            font-family: var(--font-head);
-            font-size: clamp(22px, 2.5vw, 30px);
-            font-weight: 800;
-            color: var(--text-primary);
-            letter-spacing: -0.5px;
-            margin-bottom: 16px;
-            line-height: 1.2;
+        .header-btn:hover {
+            background: rgba(255,255,255,0.15);
         }
 
-        .section-title span { color: var(--red-primary); }
-
-        .summary-text {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .summary-highlights {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        .cart-icon {
             position: relative;
-            z-index: 1;
         }
 
-        .summary-highlights li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        /* Regra de contraste UX para quando a lista estiver no bloco escuro */
-        .summary-media .summary-highlights li {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .hl-icon {
-            width: 28px;
-            height: 28px;
-            background: var(--green-accent);
+        .cart-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--yellow-accent);
+            color: #333;
+            font-size: 0.65rem;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
-            flex-shrink: 0;
-            margin-top: 1px;
+            font-weight: 700;
         }
 
-        .summary-media {
-            background: linear-gradient(135deg, #0a7b46 0%, #2d5e2a 100%);
-            border-radius: var(--radius-xl);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 30px;
-            min-height: 340px;
-            position: relative;
+        /* ===== PROMO STRIP (SITE 1) ===== */
+        .promo-strip {
+            background: linear-gradient(90deg, var(--yellow-accent), var(--red-primary), var(--green-accent));
+            padding: 14px 24px;
+            text-align: center;
+            font-weight: 700;
+            color: #1a1a2e;
+            font-size: 0.95rem;
             overflow: hidden;
+            white-space: nowrap;
         }
 
-        .summary-media::before {
+        .promo-strip span {
+            display: inline-block;
+            animation: scrollText 20s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ===== HERO BANNER (SITE 1) ===== */
+.hero-banner {
+    background: linear-gradient(135deg, #2a5496 0%, #3f72b5 100%); /* Mantém o gradiente elegante usando seu novo azul */
+    padding: 60px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+        .hero-banner::before {
             content: '';
             position: absolute;
-            top: -40px; right: -40px;
-            width: 200px; height: 200px;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
             background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
             border-radius: 50%;
         }
 
-        .summary-rating {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(45,170,95,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
             position: relative;
-            z-index: 1;
-            width: 100%;
-        }
-
-        .rating-stars { font-size: 20px; letter-spacing: 2px; }
-
-        .rating-score {
-            font-family: var(--font-head);
-            font-size: 32px;
-            font-weight: 900;
-            color: var(--yellow-accent);
-        }
-
-        .rating-count { font-size: 13px; color: rgba(255,255,255,0.6); }
-
-        /* ===== SPECS TABLE ===== */
-        .specs-section {
-            background: var(--white);
-            padding: 56px 24px;
-        }
-
-        .specs-inner {
-            max-width: 1280px;
+            z-index: 2;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .specs-section-header {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            margin-bottom: 36px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .specs-tabs {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .specs-tab {
-            padding: 8px 18px;
+        .hero-badge {
+            display: inline-block;
+            background: var(--green-accent);
+            color: white;
+            padding: 6px 18px;
             border-radius: 50px;
-            border: 1.5px solid #e0e0e0;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: var(--font-head);
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: white;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(90deg, var(--yellow-accent), var(--red-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgb(255, 255, 255);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--red-primary);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            box-shadow: 0 4px 20px rgba(255,107,53,0.4);
+        }
+
+        .hero-cta:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255,107,53,0.5);
+        }
+
+        /* ===== BRANDS BAR (ADAPTADO DO SITE 2) ===== */
+        .brands-bar {
             background: var(--white);
-            font-family: var(--font-body);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding: 20px 24px;
+        }
+
+        .brands-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .brands-inner::-webkit-scrollbar { display: none; }
+
+        .brands-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            white-space: nowrap;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .brand-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 100px;
+            border: 1.5px solid #e0e0e0;
             font-size: 13px;
             font-weight: 600;
             color: var(--text-muted);
             cursor: pointer;
             transition: var(--transition);
+            white-space: nowrap;
+            flex-shrink: 0;
+            text-decoration: none;
+            background: var(--white);
         }
 
-        .specs-tab.active,
-        .specs-tab:hover {
+        .brand-pill:hover, .brand-pill.active {
             border-color: var(--red-primary);
             color: var(--red-primary);
             background: var(--red-pale);
         }
 
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
+        .brand-pill .brand-emoji { font-size: 16px; }
 
-        .specs-table thead tr {
-            background: linear-gradient(135deg, #0a7b46 0%, #2d5e2a 100%);
-        }
-
-        .specs-table thead th {
-            padding: 16px 20px;
-            text-align: left;
-            font-family: var(--font-head);
-            font-size: 13px;
-            font-weight: 700;
-            color: rgba(255,255,255,0.8);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        .specs-table tbody tr {
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .specs-table tbody tr:last-child { border-bottom: none; }
-
-        .specs-table tbody tr:hover { background: var(--red-pale); }
-
-        .specs-table tbody tr:nth-child(even) { background: var(--bg-secondary); }
-        .specs-table tbody tr:nth-child(even):hover { background: var(--red-pale); }
-
-        .specs-table td {
-            padding: 14px 20px;
-            font-size: 14px;
-        }
-
-        .specs-table td:first-child {
-            color: var(--text-muted);
-            font-weight: 600;
-            width: 38%;
+        /* ===== SECTIONS (ADAPTADO DO SITE 2) ===== */
+        .section-header {
             display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .spec-row-icon {
-            width: 30px;
-            height: 30px;
-            background: var(--red-pale);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-
-        .specs-table td:last-child {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .spec-highlight {
-            display: inline-block;
-            background: var(--green-accent);
-            color: #fff;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 50px;
-            margin-left: 8px;
-            vertical-align: middle;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-primary) 60%, #ff9a5a 100%);
-            padding: 64px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -80px; right: -80px;
-            width: 360px; height: 360px;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: -60px; left: -60px;
-            width: 280px; height: 280px;
-            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .cta-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-eyebrow {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            color: #fff;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 6px 18px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .cta-title {
-            font-family: var(--font-head);
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            font-weight: 900;
-            color: var(--white);
-            line-height: 1.15;
-            margin-bottom: 12px;
-        }
-
-        .cta-title span { color: var(--yellow-accent); }
-
-        .cta-subtitle {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 36px;
-        }
-
-        .cta-price-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
+            align-items: flex-end;
+            justify-content: space-between;
             margin-bottom: 32px;
             flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .cta-price-old {
-            font-size: 18px;
-            color: rgba(255,255,255,0.5);
-            text-decoration: line-through;
-        }
-
-        .cta-price-new {
+        .section-title {
             font-family: var(--font-head);
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--yellow-accent);
-            line-height: 1;
-        }
-
-        .cta-price-off {
-            background: var(--yellow-accent);
-            color: #1a1a2e;
-            font-size: 16px;
+            font-size: clamp(24px, 3vw, 34px);
             font-weight: 800;
-            padding: 8px 16px;
-            border-radius: 50px;
+            letter-spacing: -0.8px;
+            line-height: 1.1;
+            color: var(--text-primary);
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
+        .section-title span { color: var(--red-primary); }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-top: 6px;
         }
 
-        .btn-cta-primary {
-            background: var(--white);
-            color: var(--red-dark);
-            border: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-size: 16px;
-            font-weight: 800;
-            cursor: pointer;
+        .see-all {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--red-primary);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .see-all:hover { opacity: 0.75; }
+
+        /* ===== CATEGORY GRID (ADAPTADO DO SITE 2) ===== */
+        #categorias {
+            background: var(--white);
+            border-radius: 0;
+            padding: 56px 24px;
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 14px;
+        }
+
+        .cat-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: var(--text-primary);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        .cat-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--red-primary);
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--radius-lg);
         }
 
-        .btn-cta-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(255,255,255,0.5);
-            padding: 18px 36px;
-            border-radius: 50px;
+        .cat-card:hover {
+            border-color: var(--red-primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cat-card:hover::before { opacity: 0.04; }
+
+        .cat-card.active {
+            background: var(--red-pale);
+            border-color: var(--red-primary);
+        }
+
+        .cat-icon {
+            font-size: 36px;
+            line-height: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cat-name {
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cat-count {
+            font-size: 11px;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== PRODUCTS GRID (ADAPTADO DO SITE 2) ===== */
+        #produtos {
+            background: var(--bg-primary);
+        }
+
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 100px;
+            border: 1.5px solid #e0e0e0;
+            background: var(--white);
             font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover { border-color: var(--red-primary); color: var(--red-primary); }
+        .filter-btn.active { background: var(--red-primary); border-color: var(--red-primary); color: #fff; }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(255,107,53,0.2);
+        }
+
+        .product-img-wrap {
+            aspect-ratio: 4/3;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-emoji {
+            font-size: 72px;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .product-card:hover .product-emoji { transform: scale(1.15); }
+
+        .product-badges {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 100px;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-off { background: var(--red-dark); color: #fff; }
+        .badge-cupom { background: var(--green-accent); color: #fff; }
+        .badge-frete { background: var(--blue-accent); color: #fff; }
+        .badge-hot { background: var(--red-primary); color: #fff; }
+
+        .product-wishlist {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .product-wishlist:hover { transform: scale(1.1); }
+
+        .product-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-brand {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--red-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .product-name {
+            font-family: var(--font-head);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .spec-pill {
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            padding: 4px 10px;
+        }
+
+        .product-pricing {
+            margin-top: auto;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .price-new {
+            font-family: var(--font-head);
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--red-primary);
+        }
+
+        .price-old {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .price-pix {
+            font-size: 13px;
+            color: var(--green-accent);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .cupom-box {
+            background: var(--red-pale);
+            border: 1.5px dashed var(--red-primary);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cupom-box:hover { background: #FFE8D6; }
+
+        .cupom-label { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+
+        .cupom-code {
+            font-family: monospace;
             font-size: 15px;
             font-weight: 700;
+            color: var(--red-dark);
+            letter-spacing: 1px;
+        }
+
+        .cupom-copy {
+            font-size: 12px;
+            color: var(--red-dark);
+            font-weight: 600;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .product-cta {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-buy {
+            flex: 1;
+            background: var(--red-primary);
+            color: #fff;
+            border: none;
+            padding: 13px 18px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-buy:hover {
+            background: var(--red-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(255,107,53,0.3);
+        }
+
+        .btn-primary {
+            background: var(--red-primary);
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
@@ -894,28 +798,247 @@
             transition: var(--transition);
         }
 
-        .btn-cta-secondary:hover {
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(255,107,53,0.35);
+        }
+
+        .btn-share {
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid #e0e0e0;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .btn-share:hover { border-color: var(--red-primary); background: var(--red-pale); }
+
+        .product-store {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .product-store strong { color: var(--text-primary); }
+
+        /* ===== DEALS BANNER (ADAPTADO DO SITE 2 COM CORES DO SITE 1) ===== */
+        .deals-banner {
+            background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-primary) 100%);
+            margin: 0;
+            padding: 48px 24px;
+        }
+
+        .deals-banner-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .deals-banner h2 {
+            font-family: var(--font-head);
+            font-size: clamp(28px, 3.5vw, 44px);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -1px;
+            margin-bottom: 14px;
+        }
+
+        .deals-banner p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+
+        .deals-timer {
+            display: flex;
+            gap: 12px;
+        }
+
+        .timer-block {
+            background: rgba(0,0,0,0.2);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            text-align: center;
+            min-width: 64px;
+        }
+
+        .timer-num {
+            font-family: var(--font-head);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--yellow-accent);
+            display: block;
+            line-height: 1;
+        }
+
+        .timer-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 4px;
+        }
+
+        .timer-sep {
+            font-family: var(--font-head);
+            font-size: 28px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.5);
+            align-self: center;
+            margin-top: -10px;
+        }
+
+        .deals-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .deal-mini-card {
             background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.8);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            color: #fff;
+            transition: var(--transition);
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .deal-mini-card:hover {
+            background: rgba(255,255,255,0.25);
             transform: translateY(-2px);
         }
 
-        .cta-trust-row {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .deal-mini-emoji { font-size: 32px; margin-bottom: 8px; }
+
+        .deal-mini-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+
+        .deal-mini-price {
+            font-family: var(--font-head);
+            font-size: 20px;
+            font-weight: 800;
+        }
+        /* ===== HOW IT WORKS ===== */
+        .how-section {
+            background:     #0a7b46; /* Combinando com o footer escuro do site 1 */
+            padding: 72px 24px;
         }
 
-        .trust-item {
+        .how-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .how-card {
+            text-align: center;
+            color: #fff;
+        }
+
+        .how-icon-wrap {
+            width: 72px;
+            height: 72px;
+            background: rgba(244, 214, 203, 0.15);
+            border-radius: var(--radius-lg);
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            color: rgba(255,255,255,0.8);
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+            border: 1.5px solid rgba(255,107,53,0.3);
         }
 
-        .trust-icon { font-size: 16px; }
+        .how-step {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--yellow-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .how-title {
+            font-family: var(--font-head);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .how-desc {
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            line-height: 1.6;
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter {
+            background: var(--white);
+            padding: 72px 24px;
+            text-align: center;
+        }
+
+        .newsletter-inner {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-family: var(--font-head);
+            font-size: clamp(28px, 3vw, 40px);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .newsletter p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            height: 52px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 100px;
+            padding: 0 20px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--red-primary);
+            box-shadow: 0 0 0 3px rgba(255,107,53,0.12);
+        }
+
+        .newsletter-note {
+            margin-top: 14px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
 
         /* ===== FOOTER ===== */
         footer {
@@ -941,13 +1064,20 @@
             max-width: 280px;
         }
 
-        .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
 
         .social-btn {
-            width: 38px; height: 38px;
+            width: 38px;
+            height: 38px;
             border-radius: var(--radius-sm);
             background: rgba(255,255,255,0.08);
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 18px;
             transition: var(--transition);
             cursor: pointer;
@@ -980,7 +1110,14 @@
 
         .footer-col ul { list-style: none; }
         .footer-col ul li { margin-bottom: 10px; }
-        .footer-col ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; transition: var(--transition); }
+
+        .footer-col ul a {
+            color: rgb(246, 242, 242);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
         .footer-col ul a:hover { color: var(--yellow-accent); padding-left: 4px; }
 
         .footer-bottom {
@@ -997,49 +1134,126 @@
 
         .footer-bottom p { font-size: 13px; }
 
-        .footer-links { display: flex; gap: 20px; list-style: none; }
-        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; transition: var(--transition); }
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: rgb(244, 235, 235);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
         .footer-links a:hover { color: var(--yellow-accent); }
 
-        /* ===== MOBILE NAV ===== */
-        .mobile-nav {
+        /* ===== MODAL ===== */
+        .modal-overlay {
             display: none;
             position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: rgba(255,255,255,0.97);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(0,0,0,0.08);
-            z-index: 900;
-            padding: 8px 0 12px;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
         }
 
-        .mobile-nav-inner { display: flex; justify-content: space-around; }
+        .modal-overlay.active { display: flex; }
 
-        .mobile-nav-btn {
-            display: flex; flex-direction: column; align-items: center; gap: 4px;
-            background: none; border: none; cursor: pointer;
-            padding: 8px 16px; border-radius: var(--radius-sm);
-            color: var(--text-muted); text-decoration: none; transition: var(--transition);
+        .modal {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 780px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-xl);
         }
 
-        .mobile-nav-btn.active { color: var(--red-primary); }
-        .mobile-nav-icon { font-size: 22px; line-height: 1; }
-        .mobile-nav-label { font-size: 10px; font-weight: 600; }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .modal-close:hover { background: #e0e0e0; color: var(--red-primary); }
+
+        .modal-body { display: grid; grid-template-columns: 1fr 1fr; }
+
+        .modal-img {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            min-height: 320px;
+        }
+
+        .modal-info { padding: 32px; }
+
+        .modal-brand {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--red-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .modal-name {
+            font-family: var(--font-head);
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .modal-specs-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .modal-specs-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+
+        .modal-specs-list li span:first-child { color: var(--text-muted); }
+        .modal-specs-list li span:last-child { font-weight: 600; color: var(--text-primary); }
 
         /* ===== TOAST ===== */
         .toast {
             position: fixed;
-            bottom: 24px; left: 50%;
-            transform: translateX(-50%) translateY(80px);
-            background: var(--green-accent);
-            color: #fff;
-            padding: 14px 24px;
             border-radius: 100px;
             font-size: 14px;
             font-weight: 600;
             z-index: 3000;
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            display: flex; align-items: center; gap: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             box-shadow: var(--shadow-lg);
             pointer-events: none;
             white-space: nowrap;
@@ -1047,77 +1261,56 @@
 
         .toast.show { transform: translateX(-50%) translateY(0); }
 
-        /* ===== STICKY BUY BAR ===== */
-        .sticky-buy-bar {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: var(--white);
-            border-top: 1px solid rgba(0,0,0,0.1);
-            padding: 12px 24px;
-            z-index: 850;
-            transform: translateY(100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        .section-divider {
+            height: 1px;
+            background: rgba(0,0,0,0.06);
+            margin: 0;
+        }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-nav {
             display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0,0,0,0.08);
+            z-index: 900;
+            padding: 8px 0 12px;
         }
 
-        .sticky-buy-bar.visible { transform: translateY(0); }
-
-        .sticky-buy-inner {
-            max-width: 1280px;
-            margin: 0 auto;
+        .mobile-nav-inner {
             display: flex;
+            justify-content: space-around;
+        }
+
+        .mobile-nav-btn {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .sticky-product-info { display: flex; align-items: center; gap: 12px; }
-        .sticky-emoji { font-size: 28px; }
-        .sticky-name { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--text-primary); }
-        .sticky-price { font-size: 22px; font-weight: 900; color: var(--red-primary); font-family: var(--font-head); }
-
-        .sticky-buy-btn {
-            background: var(--red-primary);
-            color: #fff;
+            gap: 4px;
+            background: none;
             border: none;
-            padding: 13px 32px;
-            border-radius: var(--radius-md);
-            font-family: var(--font-body);
-            font-size: 15px;
-            font-weight: 700;
             cursor: pointer;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            text-decoration: none;
             transition: var(--transition);
-            white-space: nowrap;
         }
 
-        .sticky-buy-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
-
-        /* ===== FADE IN ANIMATION ===== */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-up { opacity: 0; animation: fadeUp 0.55s ease forwards; }
-        .animate-up:nth-child(1) { animation-delay: 0.05s; }
-        .animate-up:nth-child(2) { animation-delay: 0.10s; }
-        .animate-up:nth-child(3) { animation-delay: 0.15s; }
-        .animate-up:nth-child(4) { animation-delay: 0.20s; }
-        .animate-up:nth-child(5) { animation-delay: 0.25s; }
-        .animate-up:nth-child(6) { animation-delay: 0.30s; }
-        .animate-up:nth-child(7) { animation-delay: 0.35s; }
-        .animate-up:nth-child(8) { animation-delay: 0.40s; }
+        .mobile-nav-btn.active { color: var(--red-primary); }
+        .mobile-nav-icon { font-size: 22px; line-height: 1; }
+        .mobile-nav-label { font-size: 10px; font-weight: 600; }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .footer-inner { grid-template-columns: 1fr 1fr; }
-            .summary-inner { grid-template-columns: 1fr; }
-            .product-hero-inner { grid-template-columns: 1fr; text-align: center; }
-            .product-hero-image { order: -1; }
-            .hero-badge-row { justify-content: center; }
-            .hero-cta-row { justify-content: center; }
+            .deals-banner-inner { grid-template-columns: 1fr; }
+            .modal-body { grid-template-columns: 1fr; }
+            .modal-img { border-radius: var(--radius-xl) var(--radius-xl) 0 0; min-height: 200px; font-size: 72px; }
         }
 
         @media (max-width: 768px) {
@@ -1126,22 +1319,46 @@
             .header-actions { margin-left: auto; }
             .mobile-nav { display: block; }
             body { padding-bottom: 80px; }
-            .quick-specs-grid { grid-template-columns: repeat(3, 1fr); }
+            .products-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+            .cat-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
             .footer-inner { grid-template-columns: 1fr; }
-            .specs-table td:first-child { flex-direction: column; align-items: flex-start; gap: 4px; }
+            .deals-cards { grid-template-columns: 1fr 1fr; }
+            .newsletter-form { flex-direction: column; }
             .footer-bottom { flex-direction: column; text-align: center; }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
         }
 
         @media (max-width: 480px) {
             .header-main { padding: 10px 16px; }
             .logo-text span:first-child { font-size: 1.1rem; }
-            .quick-specs-grid { grid-template-columns: repeat(2, 1fr); }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .btn-cta-primary, .btn-cta-secondary { width: 100%; justify-content: center; }
-            /* Redução do container da imagem no mobile para não ocupar a tela toda */
-            .product-main-img { max-width: 600px; } 
+            .hero-title { font-size: 1.5rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .cat-grid { grid-template-columns: repeat(3, 1fr); }
+            .deals-cards { grid-template-columns: 1fr; }
+            .marcas-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-up {
+            opacity: 0;
+            animation: fadeUp 0.5s ease forwards;
+        }
+
+        .animate-up:nth-child(1) { animation-delay: 0.05s; }
+        .animate-up:nth-child(2) { animation-delay: 0.10s; }
+        .animate-up:nth-child(3) { animation-delay: 0.15s; }
+        .animate-up:nth-child(4) { animation-delay: 0.20s; }
+        .animate-up:nth-child(5) { animation-delay: 0.25s; }
+        .animate-up:nth-child(6) { animation-delay: 0.30s; }
+
+        .hidden-products { display: none !important; }
+
+        /* SCROLLBAR */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-secondary); }
         ::-webkit-scrollbar-thumb { background: var(--red-primary); border-radius: 4px; }
@@ -1151,282 +1368,580 @@
 
     <header class="header">
         <div class="header-top">
-            <span>🔥 COMPRE NAS LOJAS PARCEIRAS PAGANDO MENOS COM CUPONS EXCLUSIVOS — ATÉ 40% DE DESCONTO 🔥</span>
+            🔥 CUPONS EXCLUSIVOS — ATÉ 60% DE DESCONTO + FRETE GRÁTIS PARA TODO O BRASIL! 🔥
         </div>
         <div class="header-main">
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="window.scrollTo(0,0)">
                 <div class="logo-icon">X</div>
                 <div class="logo-text">
-                    <span>Grupo Xiaomi Brasil</span>
+                    <span>Cupons Brasil</span>
                     <span>Promoções &amp; Cupons</span>
                 </div>
             </a>
             <div class="search-bar">
-                <input type="text" placeholder="Buscar produtos, marcas, cupons...">
+                <input type="text" id="search-input" placeholder="Buscar produtos, marcas, cupons...">
                 <button class="search-btn">🔍</button>
             </div>
             <div class="header-actions">
-                <button class="header-btn">AQUI VOCÊ ECONOMIZA DE VERDADE  🛒</button>
+                <button class="header-btn" title="Minha Conta">
+                    ECONOMIZE COM O MELHOR CUSTO-BENEFÍCIO
+                </button>
             </div>
         </div>
     </header>
 
-    <div class="breadcrumb-bar">
-        <div class="breadcrumb-inner">
-            <a href="#">🏠 Início</a>
-            <span class="breadcrumb-sep">›</span>
-            <a href="#">Celulares</a>
-            <span class="breadcrumb-sep">›</span>
-            <a href="#">POCO</a>
-            <span class="breadcrumb-sep">›</span>
-            <span class="breadcrumb-current">POCO X7 Pro 5G</span>
+    <div class="promo-strip">
+        <span>⚡ OFERTAS RELÂMPAGO: Celulares a partir de R$ 399,90 | Tablets com 45% OFF | Smartwatches a partir de R$ 189,90 | Use o cupom XIAOMI10 e ganhe 10% EXTRA! ⚡</span>
+    </div>
+
+    <section class="hero-banner">
+        <div class="hero-content" style="display: flex; justify-content: space-between; align-items: center; gap: 40px; text-align: left; max-width: 1200px;">
+            <div class="hero-text-block" style="flex: 1;">
+                <div class="hero-badge">🏆 #1 EM CUPONS DE TECNOLOGIA CHINESA</div>
+                <h1 class="hero-title">
+                    Os Melhores <span>Cupons<br>e Promoções</span> do Brasil</h1>
+                <p class="hero-subtitle" style="margin-left: 0; margin-right: 0;">
+                    O golaço da economia é você quem faz. Encontre os melhores preços em celulares, tablets, smartwatches e muito mais.
+                    Produtos originais com garantia oficial e cupons exclusivos atualizados diariamente.
+                </p>
+                <a href="#categorias" class="hero-cta">
+                    🎯 VER TODAS AS PROMOÇÕES
+                </a>
+            </div>
+            <div class="hero-image-block" style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                <img src="imagens/gol.png" alt="Gol" style="max-width: 100%; height: auto; object-fit: contain;">
+            </div>
+        </div>
+    </section>
+
+    <div class="brands-bar" role="navigation" aria-label="Filtro por marca">
+        <div class="brands-inner">
+            <span class="brands-label">Marcas:</span>
+            <a href="#" class="brand-pill active" onclick="filterBrand('todas', this)" data-brand="todas">
+                <span class="brand-emoji">🌐</span> Todas
+            </a>
+            <a href="#" class="brand-pill" onclick="filterBrand('xiaomi', this)" data-brand="xiaomi">
+                <span class="brand-emoji">📱</span> Xiaomi
+            </a>
+            <a href="#" class="brand-pill" onclick="filterBrand('redmi', this)" data-brand="redmi">
+                <span class="brand-emoji">🔥</span> Redmi
+            </a>
+            <a href="#" class="brand-pill" onclick="filterBrand('poco', this)" data-brand="poco">
+                <span class="brand-emoji">⚡</span> POCO
+            </a>
+            <a href="#" class="brand-pill" onclick="filterBrand('oneplus', this)" data-brand="oneplus">
+                <span class="brand-emoji">🔵</span> OnePlus
+            </a>
+            <a href="#" class="brand-pill" onclick="filterBrand('realme', this)" data-brand="realme">
+                <span class="brand-emoji">🟡</span> Realme
+            </a>
+            <a href="#" class="brand-pill" onclick="filterBrand('oppo', this)" data-brand="oppo">
+                <span class="brand-emoji">🟢</span> OPPO
+            </a>
+            <a href="#" class="brand-pill" onclick="filterBrand('iqoo', this)" data-brand="iqoo">
+                <span class="brand-emoji">🎮</span> iQOO
+            </a>
+            <a href="#" class="brand-pill" onclick="filterBrand('vivo', this)" data-brand="vivo">
+                <span class="brand-emoji">💜</span> Vivo
+            </a>
         </div>
     </div>
 
-    <section class="product-hero" id="topo">
-        <div class="product-hero-inner">
-            <div class="product-hero-image">
-                <div class="product-main-img" title="POCO X7 Pro 5G">
-                    <img src="xiaomi17tpro.png" alt="Apresentação do smartphone POCO X7 Pro 5G" class="product-hero-img">
-                </div>
-            </div>
-            <div class="product-hero-info">
-                <div class="hero-badge-row">
-                    <span class="hero-badge hb-brand">⚡ POCO</span>
-                    <span class="hero-badge hb-off">🔥 −35%</span>
-                    <span class="hero-badge hb-new">🆕 Lançamento 2025</span>
-                    <span class="hero-badge hb-5g">5G</span>
-                </div>
-                <h1 class="product-hero-title">POCO X7 Pro 5G<br>12/256GB</h1>
-                <p class="product-hero-subtitle">
-                    Performance extrema com Dimensity 8400-Ultra, bateria de 6000mAh e carregamento de 120W. O custo-benefício definitivo para quem não quer abrir mão de nada.
-                </p>
-
-                <div class="hero-price-block">
-                    <div class="hero-price-old">De: R$ 2.299,00</div>
-                    <div class="hero-price-new">R$ 1.499<span style="font-size:1.4rem">,00</span></div>
-                    <div class="hero-price-pix">✓ R$ 1.424,05 no Pix (5% off adicional)</div>
-                </div>
-
-                <div class="hero-cta-row">
-                    <a href="#comprar" class="btn-hero-buy" onclick="showToast('🛒','Redirecionando para a loja parceira...')">
-                        🛒 Copie o cupom abaixo e compre agora na loja oficial
-                    </a>
-                    <button class="btn-hero-wish" onclick="toggleWish(this)" title="Adicionar aos favoritos">🤍</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="cupom-strip">
-        <div class="cupom-strip-inner">
-            <span class="cupom-strip-label">🎟 Cupom exclusivo – economize mais:</span>
-            <div class="cupom-strip-box" onclick="copyCupom('POCOX7BR')">
-                <span style="font-size:18px">🎟</span>
-                <span class="cupom-strip-code">POCOX7BR</span>
-                <button class="cupom-strip-btn" id="cupom-btn-main">Copiar</button>
-            </div>
-            <span class="cupom-strip-saving">✅ Você economiza R$ 800,00!</span>
-        </div>
-    </div>
-
-    <section class="summary-section">
-        <div class="summary-inner">
-            <div>
-                <div class="section-tag">⚡ Resumo do aparelho</div>
-                <h2 class="section-title">O <span>custo-benefício</span> que você estava esperando</h2>
-                <p class="summary-text">
-                    O POCO X7 Pro 5G chega em 2025 como uma das escolhas mais inteligentes do mercado. Com o chipset Dimensity 8400-Ultra fabricado em processo de 4nm, o aparelho entrega desempenho de topo de linha em tarefas do cotidiano, jogos pesados e multitarefa intensiva — sem comprometer a autonomia.
-                </p>
-                <p class="summary-text">
-                    A tela AMOLED de 6,67 polegadas com taxa de atualização de 120Hz e brilho de até 3.000 nits garante imagens vibrantes mesmo em ambientes externos. A câmera principal de 50MP com abertura f/1.69 e OIS entrega fotos nítidas em qualquer condição de luz.
-                </p>
-                <p class="summary-text">
-                    O destaque vai para a bateria de 6.000mAh combinada ao carregamento rápido de 120W — que leva o aparelho de 0 a 100% em menos de 40 minutos. Com certificação IP68, o X7 Pro resiste a imersão em água de até 1,5 metro por 30 minutos.
-                </p>
-            </div>
-            <div class="summary-media">
-                <ul class="summary-highlights">
-                    <li>
-                        <div class="hl-icon">✓</div>
-                        <span><strong>Performance de flagship:</strong> Dimensity 8400-Ultra supera chipsets rivais com custo 30% menor</span>
-                    </li>
-                    <li>
-                        <div class="hl-icon">✓</div>
-                        <span><strong>Bateria que dura o dia todo:</strong> 6.000mAh com uso real de até 2 dias em modo conservador</span>
-                    </li>
-                    <li>
-                        <div class="hl-icon">✓</div>
-                        <span><strong>Carregamento ultra-rápido:</strong> 120W HyperCharge — totalmente carregado em ~38 minutos</span>
-                    </li>
-                    <li>
-                        <div class="hl-icon">✓</div>
-                        <span><strong>Durabilidade garantida:</strong> IP68 + Gorilla Glass 7 — proteção real para o dia a dia</span>
-                    </li>
-                    <li>
-                        <div class="hl-icon">✓</div>
-                        <span><strong>Frete grátis + cupom exclusivo:</strong> melhor preço garantido com cupom <strong>POCOX7BR</strong></span>
-                    </li>
-                </ul>
-                <div class="summary-rating">
-                    <div class="rating-stars">⭐⭐⭐⭐⭐</div>
-                    <div class="rating-score">4,8</div>
-                    <div class="rating-count">Baseado em 2.847 avaliações</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="quick-specs-section">
-        <div class="quick-specs-inner">
-            <p class="quick-specs-title">✨ Especificações em destaque</p>
-            <div class="quick-specs-grid">
-                <div class="qs-card animate-up">
-                    <span class="qs-icon">🧠</span>
-                    <div class="qs-label">Processador</div>
-                    <div class="qs-value">Dimensity 8400-Ultra</div>
-                    <div class="qs-sub">4nm · Octa-core</div>
-                </div>
-                <div class="qs-card animate-up">
-                    <span class="qs-icon">💾</span>
-                    <div class="qs-label">Memória</div>
-                    <div class="qs-value">12GB RAM</div>
-                    <div class="qs-sub">256GB UFS 3.1</div>
-                </div>
-                <div class="qs-card animate-up">
-                    <span class="qs-icon">📺</span>
-                    <div class="qs-label">Tela</div>
-                    <div class="qs-value">6,67" AMOLED</div>
-                    <div class="qs-sub">120Hz · 1.5K</div>
-                </div>
-                <div class="qs-card animate-up">
-                    <span class="qs-icon">📷</span>
-                    <div class="qs-label">Câmera</div>
-                    <div class="qs-value">50MP principal</div>
-                    <div class="qs-sub">f/1.69 · OIS</div>
-                </div>
-                <div class="qs-card animate-up">
-                    <span class="qs-icon">🔋</span>
-                    <div class="qs-label">Bateria</div>
-                    <div class="qs-value">6.000mAh</div>
-                    <div class="qs-sub">120W HyperCharge</div>
-                </div>
-                <div class="qs-card animate-up">
-                    <span class="qs-icon">📶</span>
-                    <div class="qs-label">Conectividade</div>
-                    <div class="qs-value">5G + Wi-Fi 6E</div>
-                    <div class="qs-sub">BT 5.4 · NFC</div>
-                </div>
-                <div class="qs-card animate-up">
-                    <span class="qs-icon">📱</span>
-                    <div class="qs-label">Sistema</div>
-                    <div class="qs-value">HyperOS 2</div>
-                    <div class="qs-sub">Android 15</div>
-                </div>
-                <div class="qs-card animate-up">
-                    <span class="qs-icon">🛡️</span>
-                    <div class="qs-label">Proteção</div>
-                    <div class="qs-value">IP68</div>
-                    <div class="qs-sub">Gorilla Glass 7</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="specs-section" id="specs">
-        <div class="specs-inner">
-            <div class="specs-section-header">
+    <div id="categorias">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <div class="section-header">
                 <div>
-                    <div class="section-tag">📋 Ficha técnica completa</div>
-                    <h2 class="section-title" style="margin-top:10px;">Especificações <span>detalhadas</span></h2>
-                </div>
-                <div class="specs-tabs">
-                    <button class="specs-tab active" onclick="activateTab(this)">Geral</button>
-                    <button class="specs-tab" onclick="activateTab(this)">Câmera</button>
-                    <button class="specs-tab" onclick="activateTab(this)">Conectividade</button>
-                    <button class="specs-tab" onclick="activateTab(this)">Bateria</button>
+                    <h2 class="section-title">Escolha por <span>categoria</span></h2>
+                    <p class="section-subtitle">Escolha o tipo de produto que você está buscando</p>
                 </div>
             </div>
 
-            <table class="specs-table">
-                <thead>
-                    <tr>
-                        <th>Especificação</th>
-                        <th>Detalhe</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><div class="spec-row-icon">🧠</div> Processador</td>
-                        <td>MediaTek Dimensity 8400-Ultra · Octa-core 3,25GHz · 4nm TSMC</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">💾</div> RAM / Armazenamento</td>
-                        <td>12GB LPDDR5X / 256GB UFS 3.1 <span class="spec-highlight">Sem slot microSD</span></td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🖥️</div> GPU</td>
-                        <td>Mali-G615 MC6 — desempenho gráfico superior</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">📺</div> Tela</td>
-                        <td>6,67" AMOLED · 1220 × 2712px (1.5K) · 120Hz · 3.000 nits · Dolby Vision</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">📷</div> Câmera traseira</td>
-                        <td>50MP f/1.69 OIS (principal) + 8MP f/2.2 ultra-wide + 2MP macro</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🤳</div> Câmera frontal</td>
-                        <td>20MP f/2.24 — vídeo até 4K@30fps</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🔋</div> Bateria</td>
-                        <td>6.000mAh Si-C <span class="spec-highlight">+120W HyperCharge</span></td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">📶</div> Redes</td>
-                        <td>5G SA/NSA · 4G LTE · 3G WCDMA · 2G GSM</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">📡</div> Wi-Fi / Bluetooth</td>
-                        <td>Wi-Fi 6E (802.11ax) · Bluetooth 5.4 · NFC</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🗺️</div> GPS</td>
-                        <td>GPS / A-GPS / GLONASS / BeiDou / Galileo / NavIC</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🔊</div> Áudio</td>
-                        <td>Dual speakers · Dolby Atmos · Hi-Res Audio — sem P2</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">📱</div> Sistema operacional</td>
-                        <td>HyperOS 2 baseado em Android 15</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🛡️</div> Proteção</td>
-                        <td>IP68 — resistente a pó e imersão em 1,5m por 30 min</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🪟</div> Vidro frontal</td>
-                        <td>Corning Gorilla Glass 7 — resistência superior a quedas</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🔌</div> Porta</td>
-                        <td>USB Type-C 2.0 — carregamento e transferência</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">📐</div> Dimensões / Peso</td>
-                        <td>160,3 × 74,5 × 8,25mm · 220g</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🎨</div> Cores disponíveis</td>
-                        <td>Preto Obsidiana · Branco Ártico · Amarelo Neon</td>
-                    </tr>
-                    <tr>
-                        <td><div class="spec-row-icon">🔐</div> Biometria</td>
-                        <td>Leitor de impressão digital lateral · Reconhecimento facial</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="cat-grid" role="list" aria-label="Categorias de produtos">
+<a href="#" class="cat-card active animate-up" onclick="filterCategory('celulares', this)" role="listitem" data-cat="celulares">
+<span class="cat-icon" aria-hidden="true"><img src="imagens/mi17_ultra.png" alt="Celulares"></span>
+<span class="cat-name">CELULARES</span>
+                </a>
+                <a href="#" class="cat-card animate-up" onclick="filterCategory('tablets', this)" role="listitem" data-cat="tablets">
+                    <span class="cat-icon" aria-hidden="true"><img src="imagens/mipad10.png" alt="Tablets"></span>
+                    <span class="cat-name">TABLETS</span>
+                </a>
+                <a href="#" class="cat-card animate-up" onclick="filterCategory('smartwatch', this)" role="listitem" data-cat="smartwatch">
+                    <span class="cat-icon" aria-hidden="true"><img src="imagens/smartwatch_xiaomi.png" alt="Smartwatch"></span>
+                    <span class="cat-name">SMARTWATCH</span>
+                </a>
+                <a href="#" class="cat-card animate-up" onclick="filterCategory('notebook', this)" role="listitem" data-cat="notebook">
+                    <span class="cat-icon" aria-hidden="true"><img src="imagens/note8.png" alt="Notebook"></span>
+                    <span class="cat-name">NOTEBOOK</span>
+                </a>
+                <a href="#" class="cat-card animate-up" onclick="filterCategory('fone', this)" role="listitem" data-cat="fone">
+                    <span class="cat-icon" aria-hidden="true"><img src="imagens/mi_fone.png" alt="Fone de Ouvido"></span>
+                    <span class="cat-name">FONE DE OUVIDO</span>
+                </a>
+                <a href="#" class="cat-card animate-up" onclick="filterCategory('mitv', this)" role="listitem" data-cat="mitv">
+                    <span class="cat-icon" aria-hidden="true"><img src="imagens/mitv_stick.png" alt="Mi TV Stick"></span>
+                    <span class="cat-name">MI TV STICK</span>
+                </a>
+                <a href="#" class="cat-card animate-up" onclick="filterCategory('aspirador', this)" role="listitem" data-cat="aspirador">
+                    <span class="cat-icon" aria-hidden="true"><img src="imagens/mi_aspirador.png" alt="Aspirador de Pó"></span>
+                    <span class="cat-name">ROBÔ ASPIRADOR</span>
+                </a>
+                <a href="#" class="cat-card animate-up" onclick="filterCategory('drone', this)" role="listitem" data-cat="drone">
+                    <span class="cat-icon" aria-hidden="true"><img src="imagens/xiaomi_drone.png" alt="Mi Drone"></span>
+                    <span class="cat-name">MI DRONE</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div id="produtos" style="padding: 56px 24px;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title" id="products-title">Celulares em <span>promoção</span></h2>
+                    <p class="section-subtitle" id="products-subtitle">Os melhores preços com cupons verificados – atualizado diariamente</p>
+                </div>
+                <a href="#" class="see-all">Ver todos →</a>
+            </div>
+
+            <div class="filter-bar" role="group" aria-label="Filtros de ordenação">
+                <span class="filter-label">Ordenar:</span>
+                <button class="filter-btn active" onclick="setFilter('maior-desconto', this)">Maior desconto</button>
+                <button class="filter-btn" onclick="setFilter('menor-preco', this)">Menor preço</button>
+                <button class="filter-btn" onclick="setFilter('mais-novos', this)">Mais novos</button>
+                <button class="filter-btn" onclick="setFilter('com-cupom', this)">Com cupom</button>
+                <button class="filter-btn" onclick="setFilter('frete-gratis', this)">Frete grátis</button>
+            </div>
+
+            <div class="products-grid" id="products-grid" role="list" aria-label="Lista de produtos">
+                <article class="product-card animate-up" role="listitem" data-cat="celulares" data-brand="redmi">
+                    <div class="product-img-wrap">
+                        <span class="product-emoji" aria-hidden="true">📱</span>
+                        <div class="product-badges">
+                            <span class="badge badge-off">-30%</span>
+                            <span class="badge badge-cupom">CUPOM</span>
+                        </div>
+                        <button class="product-wishlist" aria-label="Salvar nos favoritos" onclick="toggleWish(this)">🤍</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Redmi</div>
+                        <h3 class="product-name">Redmi Note 14 Pro+ 5G 12/512GB</h3>
+                        <div class="product-specs">
+                            <span class="spec-pill">Snapdragon 7s Gen 3</span>
+                            <span class="spec-pill">200MP</span>
+                            <span class="spec-pill">6,67"</span>
+                            <span class="spec-pill">5G</span>
+                            <span class="spec-pill">120Hz AMOLED</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-new">R$ 1.899</span>
+                                <span class="price-old">R$ 2.699</span>
+                            </div>
+                            <p class="price-pix">✓ R$ 1.805 no Pix (5% off)</p>
+                            <div class="cupom-box" onclick="copyCupom('MIBR30', this)" role="button" tabindex="0">
+                                <div>
+                                    <div class="cupom-label">🎟 Cupom exclusivo – clique para copiar</div>
+                                    <div class="cupom-code">MIBR30</div>
+                                </div>
+                                <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#" class="btn-buy" onclick="openModal(0)">🛒 Comprar agora</a>
+                                <button class="btn-share" aria-label="Compartilhar" onclick="shareProduct('Redmi Note 14 Pro+ 5G')">🔗</button>
+                            </div>
+                            <p class="product-store">Loja: <strong>AliExpress Official Store</strong> · Frete grátis</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card animate-up" role="listitem" data-cat="celulares" data-brand="xiaomi">
+                    <div class="product-img-wrap">
+                        <span class="product-emoji" aria-hidden="true">📲</span>
+                        <div class="product-badges">
+                            <span class="badge badge-hot">🔥 HOT</span>
+                            <span class="badge badge-off">-24%</span>
+                        </div>
+                        <button class="product-wishlist" aria-label="Salvar nos favoritos" onclick="toggleWish(this)">🤍</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Xiaomi</div>
+                        <h3 class="product-name">Xiaomi 14T Pro 5G 12/256GB</h3>
+                        <div class="product-specs">
+                            <span class="spec-pill">Dimensity 9300+</span>
+                            <span class="spec-pill">50MP Leica</span>
+                            <span class="spec-pill">6,67"</span>
+                            <span class="spec-pill">144Hz</span>
+                            <span class="spec-pill">5000mAh</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-new">R$ 2.499</span>
+                                <span class="price-old">R$ 3.299</span>
+                            </div>
+                            <p class="price-pix">✓ R$ 2.374 no Pix (5% off)</p>
+                            <div class="cupom-box" onclick="copyCupom('XIAOMI14T', this)" role="button" tabindex="0">
+                                <div>
+                                    <div class="cupom-label">🎟 Cupom Leica Edition</div>
+                                    <div class="cupom-code">XIAOMI14T</div>
+                                </div>
+                                <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#" class="btn-buy" onclick="openModal(1)">🛒 Comprar agora</a>
+                                <button class="btn-share" onclick="shareProduct('Xiaomi 14T Pro')">🔗</button>
+                            </div>
+                            <p class="product-store">Loja: <strong>Xiaomi Official Store</strong> · Frete grátis</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card animate-up" role="listitem" data-cat="celulares" data-brand="poco">
+                    <div class="product-img-wrap">
+                        <span class="product-emoji" aria-hidden="true">⚡</span>
+                        <div class="product-badges">
+                            <span class="badge badge-off">-35%</span>
+                            <span class="badge badge-frete">Frete Grátis</span>
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWish(this)">🤍</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">POCO</div>
+                        <h3 class="product-name">POCO X7 Pro 5G 12/256GB</h3>
+                        <div class="product-specs">
+                            <span class="spec-pill">Dimensity 8400</span>
+                            <span class="spec-pill">50MP</span>
+                            <span class="spec-pill">6,67"</span>
+                            <span class="spec-pill">120W Fast Charge</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-new">R$ 1.499</span>
+                                <span class="price-old">R$ 2.299</span>
+                            </div>
+                            <p class="price-pix">✓ R$ 1.424 no Pix (5% off)</p>
+                            <div class="cupom-box" onclick="copyCupom('POCOX7BR', this)" role="button" tabindex="0">
+                                <div>
+                                    <div class="cupom-label">🎟 Cupom relâmpago – 24h</div>
+                                    <div class="cupom-code">POCOX7BR</div>
+                                </div>
+                                <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#" class="btn-buy" onclick="openModal(2)">🛒 Comprar agora</a>
+                                <button class="btn-share" onclick="shareProduct('POCO X7 Pro')">🔗</button>
+                            </div>
+                            <p class="product-store">Loja: <strong>POCO Brazil Store</strong> · Frete grátis</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card animate-up" role="listitem" data-cat="smartwatch" data-brand="xiaomi">
+                    <div class="product-img-wrap">
+                        <span class="product-emoji" aria-hidden="true">⌚</span>
+                        <div class="product-badges">
+                            <span class="badge badge-off">-28%</span>
+                            <span class="badge badge-cupom">CUPOM</span>
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWish(this)">🤍</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Xiaomi</div>
+                        <h3 class="product-name">Xiaomi Watch S3 GPS + Alexa</h3>
+                        <div class="product-specs">
+                            <span class="spec-pill">AMOLED 1,43"</span>
+                            <span class="spec-pill">GPS</span>
+                            <span class="spec-pill">SpO2</span>
+                            <span class="spec-pill">15 dias bat.</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-new">R$ 649</span>
+                                <span class="price-old">R$ 899</span>
+                            </div>
+                            <p class="price-pix">✓ R$ 616 no Pix (5% off)</p>
+                            <div class="cupom-box" onclick="copyCupom('WATCH10', this)" role="button" tabindex="0">
+                                <div>
+                                    <div class="cupom-label">🎟 Cupom smartwatch</div>
+                                    <div class="cupom-code">WATCH10</div>
+                                </div>
+                                <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#" class="btn-buy" onclick="openModal(3)">🛒 Comprar agora</a>
+                                <button class="btn-share" onclick="shareProduct('Xiaomi Watch S3')">🔗</button>
+                            </div>
+                            <p class="product-store">Loja: <strong>Shopee Xiaomi BR</strong> · Frete R$ 0</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card animate-up" role="listitem" data-cat="fone" data-brand="redmi">
+                    <div class="product-img-wrap">
+                        <span class="product-emoji" aria-hidden="true">🎧</span>
+                        <div class="product-badges">
+                            <span class="badge badge-off">-37%</span>
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWish(this)">🤍</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Redmi</div>
+                        <h3 class="product-name">Redmi Buds 6 Active ANC</h3>
+                        <div class="product-specs">
+                            <span class="spec-pill">ANC 40dB</span>
+                            <span class="spec-pill">Bluetooth 5.4</span>
+                            <span class="spec-pill">35h bat.</span>
+                            <span class="spec-pill">IPX4</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-new">R$ 189</span>
+                                <span class="price-old">R$ 299</span>
+                            </div>
+                            <p class="price-pix">✓ R$ 179 no Pix (5% off)</p>
+                            <div class="cupom-box" onclick="copyCupom('BUDS15', this)" role="button" tabindex="0">
+                                <div>
+                                    <div class="cupom-label">🎟 Cupom fone de ouvido</div>
+                                    <div class="cupom-code">BUDS15</div>
+                                </div>
+                                <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#" class="btn-buy" onclick="openModal(4)">🛒 Comprar agora</a>
+                                <button class="btn-share" onclick="shareProduct('Redmi Buds 6 Active')">🔗</button>
+                            </div>
+                            <p class="product-store">Loja: <strong>Magalu Xiaomi</strong> · Frete grátis</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card animate-up" role="listitem" data-cat="notebook" data-brand="xiaomi">
+                    <div class="product-img-wrap">
+                        <span class="product-emoji" aria-hidden="true">💻</span>
+                        <div class="product-badges">
+                            <span class="badge badge-off">-19%</span>
+                            <span class="badge badge-hot">DESTAQUE</span>
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWish(this)">🤍</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Xiaomi</div>
+                        <h3 class="product-name">Xiaomi Book Air 13 OLED Intel Ultra 5</h3>
+                        <div class="product-specs">
+                            <span class="spec-pill">Intel Ultra 5</span>
+                            <span class="spec-pill">16GB RAM</span>
+                            <span class="spec-pill">512GB SSD</span>
+                            <span class="spec-pill">OLED 2,8K</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-new">R$ 3.499</span>
+                                <span class="price-old">R$ 4.299</span>
+                            </div>
+                            <p class="price-pix">✓ R$ 3.324 no Pix (5% off)</p>
+                            <div class="cupom-box" onclick="copyCupom('MIBOOK20', this)" role="button" tabindex="0">
+                                <div>
+                                    <div class="cupom-label">🎟 Cupom notebook Xiaomi</div>
+                                    <div class="cupom-code">MIBOOK20</div>
+                                </div>
+                                <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#" class="btn-buy" onclick="openModal(5)">🛒 Comprar agora</a>
+                                <button class="btn-share" onclick="shareProduct('Xiaomi Book Air 13')">🔗</button>
+                            </div>
+                            <p class="product-store">Loja: <strong>AliExpress Brazil</strong> · Frete grátis</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card animate-up" role="listitem" data-cat="tablets" data-brand="xiaomi">
+                    <div class="product-img-wrap">
+                        <span class="product-emoji" aria-hidden="true">📟</span>
+                        <div class="product-badges">
+                            <span class="badge badge-off">-22%</span>
+                            <span class="badge badge-cupom">CUPOM</span>
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWish(this)">🤍</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Xiaomi</div>
+                        <h3 class="product-name">Xiaomi Pad 7 Pro 8/256GB</h3>
+                        <div class="product-specs">
+                            <span class="spec-pill">Snapdragon 8s Gen 3</span>
+                            <span class="spec-pill">11,2" 144Hz</span>
+                            <span class="spec-pill">10000mAh</span>
+                            <span class="spec-pill">HyperOS 2</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-new">R$ 1.799</span>
+                                <span class="price-old">R$ 2.299</span>
+                            </div>
+                            <p class="price-pix">✓ R$ 1.709 no Pix (5% off)</p>
+                            <div class="cupom-box" onclick="copyCupom('PAD7BR', this)" role="button" tabindex="0">
+                                <div>
+                                    <div class="cupom-label">🎟 Cupom tablet</div>
+                                    <div class="cupom-code">PAD7BR</div>
+                                </div>
+                                <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#" class="btn-buy" onclick="openModal(6)">🛒 Comprar agora</a>
+                                <button class="btn-share" onclick="shareProduct('Xiaomi Pad 7 Pro')">🔗</button>
+                            </div>
+                            <p class="product-store">Loja: <strong>Xiaomi Official Store</strong> · Frete grátis</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card animate-up" role="listitem" data-cat="celulares" data-brand="oneplus">
+                    <div class="product-img-wrap">
+                        <span class="product-emoji" aria-hidden="true">🔵</span>
+                        <div class="product-badges">
+                            <span class="badge badge-off">-27%</span>
+                            <span class="badge badge-frete">Frete Grátis</span>
+                        </div>
+                        <button class="product-wishlist" onclick="toggleWish(this)">🤍</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">OnePlus</div>
+                        <h3 class="product-name">OnePlus 13 5G 12/256GB Hasselblad</h3>
+                        <div class="product-specs">
+                            <span class="spec-pill">Snapdragon 8 Elite</span>
+                            <span class="spec-pill">Hasselblad 50MP</span>
+                            <span class="spec-pill">6,82" 2K AMOLED</span>
+                            <span class="spec-pill">100W</span>
+                        </div>
+                        <div class="product-pricing">
+                            <div class="price-row">
+                                <span class="price-new">R$ 2.999</span>
+                                <span class="price-old">R$ 4.099</span>
+                            </div>
+                            <p class="price-pix">✓ R$ 2.849 no Pix (5% off)</p>
+                            <div class="cupom-box" onclick="copyCupom('OP13HASS', this)" role="button" tabindex="0">
+                                <div>
+                                    <div class="cupom-label">🎟 Cupom Hasselblad Edition</div>
+                                    <div class="cupom-code">OP13HASS</div>
+                                </div>
+                                <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                            </div>
+                            <div class="product-cta">
+                                <a href="#" class="btn-buy" onclick="openModal(7)">🛒 Comprar agora</a>
+                                <button class="btn-share" onclick="shareProduct('OnePlus 13')">🔗</button>
+                            </div>
+                            <p class="product-store">Loja: <strong>OnePlus Official BR</strong> · Frete grátis</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div style="text-align:center; margin-top: 40px;">
+                <button class="btn-primary" style="font-size: 15px; padding: 16px 36px;" onclick="loadMore()">
+                    Carregar mais produtos ↓
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section id="ofertas" class="deals-banner">
+        <div class="deals-banner-inner">
+            <div>
+                <h2>⚡ Ofertas<br>Relâmpago</h2>
+                <p>Descontos exclusivos por tempo limitado. Corra antes que acabem!</p>
+                <div class="deals-timer" id="countdown-timer">
+                    <div class="timer-block">
+                        <span class="timer-num" id="t-h">05</span>
+                        <div class="timer-label">horas</div>
+                    </div>
+                    <span class="timer-sep" aria-hidden="true">:</span>
+                    <div class="timer-block">
+                        <span class="timer-num" id="t-m">48</span>
+                        <div class="timer-label">minutos</div>
+                    </div>
+                    <span class="timer-sep" aria-hidden="true">:</span>
+                    <div class="timer-block">
+                        <span class="timer-num" id="t-s">00</span>
+                        <div class="timer-label">segundos</div>
+                    </div>
+                </div>
+            </div>
+            <div class="deals-cards">
+                <div class="deal-mini-card">
+                    <div class="deal-mini-emoji">📱</div>
+                    <div class="deal-mini-name">Redmi 13C 4G</div>
+                    <div class="deal-mini-price">R$ 699</div>
+                    <div style="font-size:12px; opacity:.75; margin-top:3px;">De R$ 1.099 · -36%</div>
+                </div>
+                <div class="deal-mini-card">
+                    <div class="deal-mini-emoji">🌀</div>
+                    <div class="deal-mini-name">Mi Robot Vacuum S20</div>
+                    <div class="deal-mini-price">R$ 1.299</div>
+                    <div style="font-size:12px; opacity:.75; margin-top:3px;">De R$ 1.899 · -32%</div>
+                </div>
+                <div class="deal-mini-card">
+                    <div class="deal-mini-emoji">💡</div>
+                    <div class="deal-mini-name">Mi Smart Bulb Pack 4</div>
+                    <div class="deal-mini-price">R$ 129</div>
+                    <div style="font-size:12px; opacity:.75; margin-top:3px;">De R$ 199 · -35%</div>
+                </div>
+                <div class="deal-mini-card">
+                    <div class="deal-mini-emoji">🎒</div>
+                    <div class="deal-mini-name">Mi Business Backpack</div>
+                    <div class="deal-mini-price">R$ 179</div>
+                    <div style="font-size:12px; opacity:.75; margin-top:3px;">De R$ 259 · -31%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="how-section">
+        <div style="max-width:1280px; margin: 0 auto; text-align: center;">
+            <h2 style="font-family: var(--font-head); font-size: clamp(28px,3.5vw,42px); font-weight:800; color:#fff; letter-spacing:-1px;">
+                Como economizar <span style="color: var(--red-light)">em 3 passos</span>
+            </h2>
+            <p style="color: rgb(255, 255, 255); font-size:20px; margin-top:6px;">Simples, rápido e sem complicação</p>
+        </div>
+        <div class="how-grid">
+            <div class="how-card">
+                <div class="how-icon-wrap" aria-hidden="true">🔍</div>
+                <div class="how-step">Passo 1</div>
+                <h3 class="how-title">Encontre o produto</h3>
+                <p class="how-desc">Use nossa busca ou navegue pelas categorias para encontrar celulares, tablets e eletrônicos Xiaomi com o melhor preço.</p>
+            </div>
+            <div class="how-card">
+                <div class="how-icon-wrap" aria-hidden="true">🎟️</div>
+                <div class="how-step">Passo 2</div>
+                <h3 class="how-title">Copie o cupom</h3>
+                <p class="how-desc">Clique em "Copiar" no cupom exclusivo. Todos os cupons são verificados e atualizados diariamente pela nossa equipe.</p>
+            </div>
+            <div class="how-card">
+                <div class="how-icon-wrap" aria-hidden="true">🛒</div>
+                <div class="how-step">Passo 3</div>
+                <h3 class="how-title">Aplique e economize</h3>
+                <p class="how-desc">Cole o cupom no checkout da loja parceira e aproveite o desconto. É assim que nossos usuários economizam em média R$ 48 por compra.</p>
+            </div>
+            <div class="how-card">
+                <div class="how-icon-wrap" aria-hidden="true">🔔</div>
+                <div class="how-step">Bônus</div>
+                <h3 class="how-title">Ative alertas de preço</h3>
+                <p class="how-desc">Cadastre seu e-mail e receba notificações quando o produto que você quer atingir o menor preço histórico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="newsletter-inner">
+            <div style="font-size: 48px; margin-bottom: 16px;" aria-hidden="true">🔔</div>
+            <h2>Receba as melhores<br><span style="color: var(--red-primary)">ofertas</span> no seu e-mail</h2>
+            <p>Mais de 38.000 pessoas já recebem nossas promoções diárias. Cancele quando quiser, sem spam.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="seu@email.com.br" id="email-input" aria-label="Seu e-mail">
+                <button class="btn-primary" onclick="subscribe()" style="white-space:nowrap; flex-shrink:0; border-radius:100px;">
+                    Quero cupons grátis 🎟
+                </button>
+            </div>
+            <p class="newsletter-note">🔒 Seus dados estão seguros. Nós odiamos spam tanto quanto você.</p>
         </div>
     </section>
 
@@ -1434,10 +1949,10 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <div class="logo">
-                    <div class="logo-icon" style="width:32px;height:32px;font-size:1rem;">X</div>
+                    <div class="logo-icon" style="width: 32px; height: 32px; font-size: 1rem;">X</div>
                     <div class="logo-text" style="color:#fff;">
-                        <span style="font-size:1rem;">Grupo Xiaomi Brasil</span>
-                        <span style="color:rgba(255,255,255,.6);font-size:.75rem;font-weight:400;letter-spacing:1px;text-transform:uppercase;">Promoções &amp; Cupons</span>
+                        <span style="font-size: 1rem;">Grupo Xiaomi Brasil</span>
+                        <span class="logo-sub" style="color:rgba(255,255,255,.6);">Promoções &amp; Cupons</span>
                     </div>
                 </div>
                 <p>O maior portal de promoções, cupons e ofertas de produtos Xiaomi e marcas chinesas do Brasil. Economize mais a cada compra.</p>
@@ -1488,8 +2003,8 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 Grupo Xiaomi Brasil – Promoções e Cupons. Todos os direitos reservados.<br>
-            <span style="font-size:12px;opacity:0.5;">Este site contém links de afiliados. Ao comprar, você apoia nosso trabalho sem pagar a mais por isso.</span></p>
+            <p>© 2026 Cupons Brasil – Todos os direitos reservados.<br>
+            <span style="font-size:12px; opacity:0.5;">Este site contém links de afiliados. Ao comprar, você apoia nosso trabalho sem pagar a mais por isso.</span></p>
             <ul class="footer-links">
                 <li><a href="#">Privacidade</a></li>
                 <li><a href="#">Termos</a></li>
@@ -1498,34 +2013,173 @@
         </div>
     </footer>
 
-    <nav class="mobile-nav">
+    <nav class="mobile-nav" role="navigation" aria-label="Navegação mobile">
         <div class="mobile-nav-inner">
-            <a href="#" class="mobile-nav-btn">
+            <a href="#" class="mobile-nav-btn active" aria-label="Início" onclick="window.scrollTo(0,0)">
                 <span class="mobile-nav-icon">🏠</span>
                 <span class="mobile-nav-label">Início</span>
             </a>
-            <a href="#specs" class="mobile-nav-btn">
-                <span class="mobile-nav-icon">📋</span>
-                <span class="mobile-nav-label">Specs</span>
+            <a href="#categorias" class="mobile-nav-btn" aria-label="Categorias">
+                <span class="mobile-nav-icon">📂</span>
+                <span class="mobile-nav-label">Categorias</span>
             </a>
-            <a href="#comprar" class="mobile-nav-btn active">
-                <span class="mobile-nav-icon">🛒</span>
-                <span class="mobile-nav-label">Comprar</span>
+            <a href="#ofertas" class="mobile-nav-btn" aria-label="Ofertas">
+                <span class="mobile-nav-icon">🔥</span>
+                <span class="mobile-nav-label">Ofertas</span>
             </a>
-            <a href="#" class="mobile-nav-btn" onclick="copyCupom('POCOX7BR')">
-                <span class="mobile-nav-icon">🎟</span>
-                <span class="mobile-nav-label">Cupom</span>
+            <a href="#" class="mobile-nav-btn" aria-label="Buscar" onclick="document.getElementById('search-input').focus()">
+                <span class="mobile-nav-icon">🔍</span>
+                <span class="mobile-nav-label">Buscar</span>
             </a>
         </div>
     </nav>
 
-    <div class="toast" id="toast">
+    <div class="modal-overlay" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-name" onclick="closeModalOnOverlay(event)">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()" aria-label="Fechar modal">✕</button>
+            <div class="modal-body">
+                <div class="modal-img" id="modal-emoji" aria-hidden="true">📱</div>
+                <div class="modal-info">
+                    <div class="modal-brand" id="modal-brand">Redmi</div>
+                    <h2 class="modal-name" id="modal-product-name">Redmi Note 14 Pro+ 5G</h2>
+                    <ul class="modal-specs-list" id="modal-specs">
+                        </ul>
+                    <div class="price-row" style="margin-bottom:6px;">
+                        <span class="price-new" id="modal-price">R$ 1.899</span>
+                        <span class="price-old" id="modal-price-old">R$ 2.699</span>
+                    </div>
+                    <div class="cupom-box" onclick="copyCupom(document.getElementById('modal-cupom').textContent, this)" style="margin-bottom:16px;">
+                        <div>
+                            <div class="cupom-label">🎟 Cupom exclusivo</div>
+                            <div class="cupom-code" id="modal-cupom">MIBR30</div>
+                        </div>
+                        <button class="cupom-copy" aria-hidden="true">Copiar</button>
+                    </div>
+                    <a href="#" class="btn-buy" style="display:flex; justify-content:center;">🛒 Ir para a loja parceira</a>
+                    <p class="product-store" style="margin-top:10px; text-align:center;" id="modal-store">AliExpress Official Store</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="alert" aria-live="polite">
         <span id="toast-icon">✅</span>
-        <span id="toast-msg">Ação realizada!</span>
+        <span id="toast-msg">Cupom copiado!</span>
     </div>
 
     <script>
-        // Toast
+        // ─── PRODUCT DATA ───────────────────────────────────────────────
+        const products = [
+            {
+                emoji: '📱', brand: 'Redmi',
+                name: 'Redmi Note 14 Pro+ 5G 12/512GB',
+                price: 'R$ 1.899', oldPrice: 'R$ 2.699', cupom: 'MIBR30',
+                specs: [
+                    ['Processador','Snapdragon 7s Gen 3'], ['RAM / Armazenamento','12GB / 512GB'],
+                    ['Tela','6,67" AMOLED 120Hz'], ['Câmera','200MP f/1.65'],
+                    ['Bateria','5110mAh + 90W'], ['Sistema','HyperOS 2 (Android 15)'], ['Conectividade','5G, Wi-Fi 6, BT 5.3']
+                ], store: 'AliExpress Official Store'
+            },
+            {
+                emoji: '📲', brand: 'Xiaomi',
+                name: 'Xiaomi 14T Pro 5G 12/256GB',
+                price: 'R$ 2.499', oldPrice: 'R$ 3.299', cupom: 'XIAOMI14T',
+                specs: [
+                    ['Processador','Dimensity 9300+'], ['RAM / Armazenamento','12GB / 256GB'],
+                    ['Tela','6,67" AMOLED 144Hz'], ['Câmera','50MP Leica Triple'],
+                    ['Bateria','5000mAh + 120W'], ['Sistema','HyperOS 2'], ['Conectividade','5G, Wi-Fi 7, BT 5.4']
+                ], store: 'Xiaomi Official Store'
+            },
+            {
+                emoji: '⚡', brand: 'POCO',
+                name: 'POCO X7 Pro 5G 12/256GB',
+                price: 'R$ 1.499', oldPrice: 'R$ 2.299', cupom: 'POCOX7BR',
+                specs: [
+                    ['Processador','Dimensity 8400-Ultra'], ['RAM / Armazenamento','12GB / 256GB'],
+                    ['Tela','6,67" AMOLED 120Hz'], ['Câmera','50MP f/1.69'],
+                    ['Bateria','6000mAh + 120W'], ['Sistema','HyperOS 2'], ['Conectividade','5G, Wi-Fi 6E, BT 5.4']
+                ], store: 'POCO Brazil Store'
+            },
+            {
+                emoji: '⌚', brand: 'Xiaomi',
+                name: 'Xiaomi Watch S3 GPS + Alexa',
+                price: 'R$ 649', oldPrice: 'R$ 899', cupom: 'WATCH10',
+                specs: [
+                    ['Tela','AMOLED 1,43" 60Hz'], ['GPS','Sim, Multi-GNSS'], ['Saúde','SpO2, BPM, ECG'],
+                    ['Bateria','15 dias'], ['Resistência','5ATM + IP68'], ['Compatibilidade','Android 8+ / iOS 14+'], ['Conectividade','BT 5.3']
+                ], store: 'Shopee Xiaomi BR'
+            },
+            {
+                emoji: '🎧', brand: 'Redmi',
+                name: 'Redmi Buds 6 Active ANC',
+                price: 'R$ 189', oldPrice: 'R$ 299', cupom: 'BUDS15',
+                specs: [
+                    ['Cancelamento de ruído','ANC 40dB'], ['Bluetooth','5.4'], ['Bateria','8h + 27h (case)'],
+                    ['Resistência','IPX4'], ['Drivers','10mm'], ['Latência','60ms gaming mode'], ['Compatibilidade','Android / iOS']
+                ], store: 'Magalu Xiaomi'
+            },
+            {
+                emoji: '💻', brand: 'Xiaomi',
+                name: 'Xiaomi Book Air 13 OLED',
+                price: 'R$ 3.499', oldPrice: 'R$ 4.299', cupom: 'MIBOOK20',
+                specs: [
+                    ['Processador','Intel Core Ultra 5 125H'], ['RAM','16GB LPDDR5X'],
+                    ['Armazenamento','512GB NVMe SSD'], ['Tela','13" OLED 2,8K 90Hz'],
+                    ['Bateria','56Wh + 65W USB-C'], ['Sistema','Windows 11 Home'], ['Peso','1,07 kg']
+                ], store: 'AliExpress Brazil'
+            },
+            {
+                emoji: '📟', brand: 'Xiaomi',
+                name: 'Xiaomi Pad 7 Pro 8/256GB',
+                price: 'R$ 1.799', oldPrice: 'R$ 2.299', cupom: 'PAD7BR',
+                specs: [
+                    ['Processador','Snapdragon 8s Gen 3'], ['RAM / Armazenamento','8GB / 256GB'],
+                    ['Tela','11,2" LCD 144Hz 2,8K'], ['Câmera','13MP + 8MP frontal'],
+                    ['Bateria','10000mAh + 67W'], ['Sistema','HyperOS 2'], ['Conectividade','Wi-Fi 6E, BT 5.3']
+                ], store: 'Xiaomi Official Store'
+            },
+            {
+                emoji: '🔵', brand: 'OnePlus',
+                name: 'OnePlus 13 5G 12/256GB',
+                price: 'R$ 2.999', oldPrice: 'R$ 4.099', cupom: 'OP13HASS',
+                specs: [
+                    ['Processador','Snapdragon 8 Elite'], ['RAM / Armazenamento','12GB / 256GB'],
+                    ['Tela','6,82" BOE AMOLED 2K 120Hz'], ['Câmera','50MP Hasselblad Triple'],
+                    ['Bateria','6000mAh + 100W + 50W wireless'], ['Sistema','OxygenOS 15'], ['Conectividade','5G, Wi-Fi 7, BT 5.4']
+                ], store: 'OnePlus Official BR'
+            },
+        ];
+
+        // ─── MODAL ───────────────────────────────────────────────────────
+        function openModal(idx) {
+            const p = products[idx];
+            if (!p) return;
+            document.getElementById('modal-emoji').textContent = p.emoji;
+            document.getElementById('modal-brand').textContent = p.brand;
+            document.getElementById('modal-product-name').textContent = p.name;
+            document.getElementById('modal-price').textContent = p.price;
+            document.getElementById('modal-price-old').textContent = p.oldPrice;
+            document.getElementById('modal-cupom').textContent = p.cupom;
+            document.getElementById('modal-store').textContent = p.store;
+            const ul = document.getElementById('modal-specs');
+            ul.innerHTML = p.specs.map(([k,v]) => `<li><span>${k}</span><span>${v}</span></li>`).join('');
+            document.getElementById('product-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            return false;
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnOverlay(e) {
+            if (e.target === e.currentTarget) closeModal();
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // ─── TOAST ───────────────────────────────────────────────────────
         function showToast(icon, msg) {
             const t = document.getElementById('toast');
             document.getElementById('toast-icon').textContent = icon;
@@ -1534,75 +2188,152 @@
             setTimeout(() => t.classList.remove('show'), 2800);
         }
 
-        // Copy cupom
-        function copyCupom(code) {
+        // ─── CUPOM COPY ─────────────────────────────────────────────────
+        function copyCupom(code, el) {
             navigator.clipboard.writeText(code).then(() => {
                 showToast('🎟', `Cupom ${code} copiado! Cole no checkout.`);
-                const btn = document.getElementById('cupom-btn-main');
-                if (btn) { btn.textContent = '✓ Copiado!'; setTimeout(() => btn.textContent = 'Copiar', 2200); }
-            }).catch(() => {
-                showToast('📋', `Cupom: ${code} – copie manualmente`);
-            });
+                if (el) {
+                    const btn = el.querySelector('.cupom-copy');
+                    if (btn) { btn.textContent = '✓ Copiado!'; setTimeout(() => btn.textContent = 'Copiar', 2000); }
+                }
+            }).catch(() => showToast('📋', `Cupom: ${code} – copie manualmente`));
             return false;
         }
 
-        // Wishlist
+        // ─── WISHLIST ───────────────────────────────────────────────────
         function toggleWish(btn) {
             const liked = btn.textContent === '❤️';
             btn.textContent = liked ? '🤍' : '❤️';
             showToast(liked ? '💔' : '❤️', liked ? 'Removido dos favoritos' : 'Adicionado aos favoritos!');
         }
 
-        // Specs tabs
-        function activateTab(el) {
-            document.querySelectorAll('.specs-tab').forEach(t => t.classList.remove('active'));
-            el.classList.add('active');
-            showToast('📋', 'Mostrando: ' + el.textContent);
-        }
-
-        // Handle buy CTA
-        function handleBuy() {
-            copyCupom('POCOX7BR');
-            setTimeout(() => showToast('🛒', 'Abrindo loja parceira com o melhor preço...'), 700);
-            return false;
-        }
-
-        // Sticky bar on scroll
-        const stickyBar = document.createElement('div');
-        stickyBar.className = 'sticky-buy-bar';
-        stickyBar.innerHTML = `
-            <div class="sticky-buy-inner">
-                <div class="sticky-product-info">
-                    <span class="sticky-emoji">⚡</span>
-                    <div>
-                        <div class="sticky-name">POCO X7 Pro 5G 12/256GB</div>
-                        <div style="font-size:12px;color:var(--text-muted);">Frete grátis · Cupom POCOX7BR</div>
-                    </div>
-                </div>
-                <div class="sticky-price">R$ 1.499</div>
-                <button class="sticky-buy-btn" onclick="handleBuy()">🛒 Copiar cupom e ir para a loja oficial</button>
-            </div>`;
-        document.body.appendChild(stickyBar);
-
-        // Only show on desktop (non-mobile)
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const heroBottom = document.querySelector('.product-hero').getBoundingClientRect().bottom;
-            const isMobile = window.innerWidth <= 768;
-
-            if (!isMobile) {
-                stickyBar.style.display = 'block';
-                if (heroBottom < 0) {
-                    stickyBar.classList.add('visible');
-                } else {
-                    stickyBar.classList.remove('visible');
-                }
+        // ─── SHARE ──────────────────────────────────────────────────────
+        function shareProduct(name) {
+            if (navigator.share) {
+                navigator.share({ title: name, text: `Confira essa oferta: ${name}`, url: location.href });
             } else {
-                stickyBar.style.display = 'none';
+                navigator.clipboard.writeText(location.href);
+                showToast('🔗', 'Link copiado para compartilhar!');
             }
-            lastScroll = scrollY;
+        }
+
+        // ─── CATEGORY FILTER ────────────────────────────────────────────
+        const catTitles = {
+            celulares: ['Celulares em <span>promoção</span>', 'Os melhores preços com cupons verificados – atualizado diariamente'],
+            tablets: ['Tablets em <span>promoção</span>', 'Melhores tablets Xiaomi e marcas chinesas com desconto'],
+            smartwatch: ['Smartwatches em <span>oferta</span>', 'Smartwatches com GPS, SpO2 e até 15 dias de bateria'],
+            notebook: ['Notebooks com <span>cupom</span>', 'Ultrabooks leves e potentes com os melhores preços'],
+            fone: ['Fones de ouvido em <span>promoção</span>', 'TWS e headphones com ANC e bateria de longa duração'],
+            mitv: ['Mi TV Stick & Smart TV', 'Transforme qualquer TV em Smart TV por menos'],
+            aspirador: ['Aspiradores de pó <span>Xiaomi</span>', 'Robôs e aspiradores verticais com cupons exclusivos'],
+            caixasom: ['Caixas de som em <span>oferta</span>', 'Bluetooth, à prova d\'água e até 30h de autonomia'],
+            balanca: ['Balanças digitais <span>smart</span>', 'Balanças com análise corporal via app'],
+            escova: ['Escovas elétricas <span>Xiaomi</span>', 'Higiene bucal inteligente com tecnologia sônica'],
+            mochila: ['Mochilas <span>Mi</span>', 'Mochilas tech para trabalho e viagem'],
+            compressor: ['Compressores de ar <span>portáteis</span>', 'Portáteis e com bateria para pneus, bolas e mais'],
+            iluminacao: ['Iluminação <span>Smart Home</span>', 'Lâmpadas, fitas LED e luminárias compatíveis com Alexa'],
+            drone: ['Mi Drone – <span>ofertas</span>', 'Drones com câmera 4K e GPS a preços imperdíveis'],
+        };
+
+        function filterCategory(cat, el) {
+            event.preventDefault();
+            document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            const cards = document.querySelectorAll('#products-grid .product-card');
+            cards.forEach(c => {
+                c.classList.remove('hidden-products');
+                if (c.dataset.cat !== cat) c.classList.add('hidden-products');
+            });
+            const title = catTitles[cat] || ['Produtos em <span>oferta</span>', 'Preços atualizados diariamente'];
+            document.getElementById('products-title').innerHTML = title[0];
+            document.getElementById('products-subtitle').textContent = title[1];
+            document.getElementById('produtos').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ─── BRAND FILTER ────────────────────────────────────────────────
+        function filterBrand(brand, el) {
+            event.preventDefault();
+            document.querySelectorAll('.brand-pill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+            const cards = document.querySelectorAll('#products-grid .product-card');
+            cards.forEach(c => {
+                c.classList.remove('hidden-products');
+                if (brand !== 'todas' && c.dataset.brand !== brand) c.classList.add('hidden-products');
+            });
+        }
+
+        // ─── SORT FILTER ────────────────────────────────────────────────
+        function setFilter(type, el) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            el.classList.add('active');
+            if (type === 'com-cupom') showToast('🎟', 'Mostrando apenas produtos com cupom ativo');
+            if (type === 'frete-gratis') showToast('🚚', 'Mostrando produtos com frete grátis');
+            if (type === 'maior-desconto') showToast('🔥', 'Ordenado por maior desconto');
+            if (type === 'menor-preco') showToast('💰', 'Ordenado por menor preço');
+            if (type === 'mais-novos') showToast('🆕', 'Mostrando os produtos mais recentes');
+        }
+
+        // ─── LOAD MORE ──────────────────────────────────────────────────
+        function loadMore() {
+            showToast('⏳', 'Carregando mais produtos...');
+            setTimeout(() => showToast('✅', 'Novos produtos carregados!'), 1200);
+        }
+
+        // ─── NEWSLETTER ─────────────────────────────────────────────────
+        function subscribe() {
+            const email = document.getElementById('email-input').value;
+            if (!email || !email.includes('@')) {
+                showToast('⚠️', 'Por favor, insira um e-mail válido.');
+                return;
+            }
+            showToast('🎉', 'Cadastrado! Você receberá as melhores ofertas.');
+            document.getElementById('email-input').value = '';
+        }
+
+        // ─── SEARCH ─────────────────────────────────────────────────────
+        document.getElementById('search-input').addEventListener('input', function() {
+            const q = this.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('#products-grid .product-card');
+            if (!q) { cards.forEach(c => c.classList.remove('hidden-products')); return; }
+            cards.forEach(c => {
+                const text = c.querySelector('.product-name').textContent.toLowerCase() +
+                             ' ' + c.querySelector('.product-brand').textContent.toLowerCase();
+                c.classList.toggle('hidden-products', !text.includes(q));
+            });
+        });
+
+        // ─── SEARCH BUTTON ──────────────────────────────────────────────
+        document.querySelector('.search-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const input = document.getElementById('search-input');
+            if(input.value) {
+                document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+                showToast('🔍', 'Buscando: ' + input.value);
+            }
+        });
+
+        // ─── COUNTDOWN ──────────────────────────────────────────────────
+        let countdownSeconds = (5 * 3600) + (48 * 60);
+        function updateCountdown() {
+            const h = String(Math.floor(countdownSeconds / 3600)).padStart(2,'0');
+            const m = String(Math.floor((countdownSeconds % 3600) / 60)).padStart(2,'0');
+            const s = String(countdownSeconds % 60).padStart(2,'0');
+            document.getElementById('t-h').textContent = h;
+            document.getElementById('t-m').textContent = m;
+            document.getElementById('t-s').textContent = s;
+            if (countdownSeconds > 0) countdownSeconds--;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // ─── MOBILE NAV ACTIVE STATE ──────────────────────────────────
+        document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.mobile-nav-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
     </script>
+
 </body>
 </html>
